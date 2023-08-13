@@ -32,7 +32,7 @@ Trello sprint board [link](https://trello.com/b/1AhAgCnS/theme-generator)
 
 ## Models/Schemas
 
-### Primary Model: Theme
+### Primary Schema: Theme
 
 | Property | Type | Validations | Default Value |
 |----------|----------|----------|----------|
@@ -40,7 +40,7 @@ Trello sprint board [link](https://trello.com/b/1AhAgCnS/theme-generator)
 | theme | String | Required. Allow no more than 40 characters| n/a |
 | description | String | Required. Allow no more than 300 characters | n/a |
 
-### Seconadary Model: Style
+### Seconadary Schema: Styleset
 
 | Property | Type | Validations | Default Value |
 |----------|----------|----------|----------|
