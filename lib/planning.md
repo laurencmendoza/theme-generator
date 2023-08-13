@@ -58,7 +58,8 @@ Trello sprint board [link](https://trello.com/b/1AhAgCnS/theme-generator)
 
 ## Entity Relationship Diagram
 
-Lucid EDR link
+__Note:__ Each Theme have zero or many Stylesets. Each Styleset belongs to one and only one Theme.
+![Theme Generator ERD](../assets/Theme%20Generator%20ERD.png)
 
 ## MVP CRUD / RESTful Routes
  Route name | CRUD operation | URL endpoint | Module name | Controller Action | Notes |
