@@ -26,9 +26,15 @@ Trello sprint board [link](https://trello.com/b/1AhAgCnS/theme-generator)
 
 ### Home Page
 
+![Home Page](../assets/Theme_Index.jpg)
+
 ### Add Theme Page
 
+![Add Theme Page](../assets/Theme_Add.jpg)
+
 ### Theme Details Page
+
+![Theme Details Page](../assets/Theme_Show.jpg)
 
 ## Models/Schemas
 
