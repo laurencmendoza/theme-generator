@@ -8,17 +8,17 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 module.exports = {
-    openAI
+    sendRequest
 }
 
 
-async function openAI(prompt) {
+async function sendRequest(prompt) {
 try {
   const chat_completion = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
     messages: [{ role: "user", content: prompt }],
   });
-  console.log(chat_completion.data.choices[0].message.content);
+  // console.log(JSON.parse(chat_completion.data.choices[0].message.content));
   return JSON.parse(chat_completion.data.choices[0].message.content)
 } catch (err) {
   console.log(err);

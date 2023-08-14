@@ -1,5 +1,6 @@
 const Theme = require('../models/theme')
 const Styleset = require('../models/styleset')
+const openAI = require('../config/openai')
 
 module.exports = {
     index,
@@ -41,9 +42,19 @@ async function deleteTheme(req, res) {
 }
 
 async function show(req, res) {
-    const themes = await Theme.findById(req.params.id)
-    res.render('themes/show', {
-        title: `${themes.theme}`, 
-        themes
-    })
+    
+    
+    try {
+        const themes = await Theme.findById(req.params.id)
+        const openAIResponse = await openAI.sendRequest(`Theme: ${themes.theme}. Theme description: ${themes.description} Respond with a JSON-like answer on what font color rgba, public Google font href, and background color rgba could be used for this theme`)
+        res.render('themes/show', {
+            title: `${themes.theme}`, 
+            themes, 
+            openAIResponse
+        })
+    } catch(err) {
+        res.render('themes/show', {errorMsg: err.message})
+    }
+    
+    // res.send(openAIResponse)
 }
