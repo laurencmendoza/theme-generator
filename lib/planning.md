@@ -96,10 +96,10 @@ __Note:__ Each Theme have zero or many Stylesets. Each Styleset belongs to one a
 | TG-11      | Update style | AAU, when viewing the details page (show view) for a theme, I want to update a style by clicking on update icon next to each row of the style list. |  | 1 | Moderate | 1 | TG-6 |
 | TG-12      | Delete style | AAU, when viewing the details page (show view) for a theme, I want to delete a style by clicking on delete icon next to each row of the style list. |  | 1 | Low | 1 | TG-6 |
 | TG-13      | Preview styles in rows of style list | AAU, when viewing the details page (show view) for a theme, I want to preview styles by applying corresponding styles to each row in the list of styles. |  | 2 | Moderate | 2 | TG-6 |
-| TG-14      | Apply default theme style to application | AAU, I want to apply a default theme style to the whole web application (wireframe is required) |  | 2 | High | 2 | TG-9 |
+| TG-14      | Apply default theme style to application | AAU, I want to apply a default theme style to the whole web application (wireframe is required) |  | 3 | High | 3 | TG-9 |
 | TG-15      | Truncate theme description | AAU, when viewing the list of themes, I want to see theme description text truncated. |  | 2 | Low | 2 | TG-1 |
-| TG-16      | Export default theme style in CSS format | AAU, when viewing the list of themes, I want to export a default theme style in CSS format |  | 2 | High | 2 | TG-9 |
-| TG-17      | Get customed style properties | AAU, I want to get customed style properties, not only those that were hardcoded initially |  | 2 | High | 2 | Tg-6 |
+| TG-16      | Export default theme style in CSS format | AAU, when viewing the list of themes, I want to export a default theme style in CSS format |  | 3 | High | 3 | TG-9 |
+| TG-17      | Get customed style properties | AAU, I want to get customed style properties, not only those that were hardcoded initially |  | 3 | High | 3 | Tg-6 |
 | TG-18      | Sign up using Google account | AAU, I want to be able to sign up using Google account |  | 2 | Moderate | 2 |  |
 | TG-19      | Log in using Google account | AAAH, I want to be able to log in using Google account. |  | 2 | Moderate | 2 | TG-18 |
 | TG-20      | Make themes and styles private | AAAH, I want the themes created under my account to be private so that nobody except me could add, view, delete themes, and generate, view, update, delete styles. |  | 2 | High | 2 | TG-19 |
