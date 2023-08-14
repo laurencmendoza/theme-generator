@@ -1,17 +1,20 @@
 var express = require('express');
 var router = express.Router();
-const themesCtrl = require('../controllers/themes')
+const themesCtrl = require('../controllers/themes');
 
 /* GET themes listing. */
 router.get('/', themesCtrl.index);
 
 // GET new page
-router.get('/new', themesCtrl.new)
+router.get('/new', themesCtrl.new);
 
 // GET themes detail page
-// router.get('/:id', themesCtrl.show)
+// router.get('/:id', themesCtrl.show);
 
 // POST a new theme to index
-router.post('/', themesCtrl.create)
+router.post('/', themesCtrl.create);
+
+// DELETE a theme
+router.delete('/:id', themesCtrl.delete);
 
 module.exports = router;
