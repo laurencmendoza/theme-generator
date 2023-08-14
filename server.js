@@ -6,7 +6,8 @@ var logger = require('morgan');
 var methodOverride = require('method-override');
 
 require('dotenv').config();
-require('./config/database')
+require('./config/database');
+require('./config/openai');
 
 var indexRouter = require('./routes/index');
 var themesRouter = require('./routes/themes');
