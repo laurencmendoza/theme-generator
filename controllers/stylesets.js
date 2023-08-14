@@ -9,6 +9,7 @@ module.exports = {
 
 async function createStyleset(req, res) {
     try {
+        const themes = await Theme.findById(req.params.id)
         const openAIResponse = await openAI.sendRequest(`Theme: ${themes.theme}. Theme description: ${themes.description} Respond with a JSON-like answer with keys fontColor, googleFontFamily, and mainBackgroundColor on what font color rgba, public Google font href, and background color rgba could be used for this theme respectively`)
         const stylesetData = {...openAIResponse}
         stylesetData.theme = req.params.id
