@@ -42,19 +42,27 @@ async function deleteTheme(req, res) {
 }
 
 async function show(req, res) {
-    
-    
     try {
         const themes = await Theme.findById(req.params.id)
-        const openAIResponse = await openAI.sendRequest(`Theme: ${themes.theme}. Theme description: ${themes.description} Respond with a JSON-like answer on what font color rgba, public Google font href, and background color rgba could be used for this theme`)
+        
+        const styleset = await Styleset.find({theme: themes._id})
         res.render('themes/show', {
             title: `${themes.theme}`, 
             themes, 
-            openAIResponse
+            styleset
         })
     } catch(err) {
         res.render('themes/show', {errorMsg: err.message})
     }
-    
     // res.send(openAIResponse)
 }
+
+// fontColor: {
+//     type: String
+// }, 
+// googleFontFamily: {
+//     type: String
+// }, 
+// mainBackgroundColor: {
+//     type: String
+// }

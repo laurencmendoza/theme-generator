@@ -11,6 +11,7 @@ require('./config/openai');
 
 var indexRouter = require('./routes/index');
 var themesRouter = require('./routes/themes');
+var stylesetsRouter = require('./routes/stylesets');
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/themes', themesRouter);
+app.use('/', stylesetsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
