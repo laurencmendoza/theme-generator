@@ -1,0 +1,33 @@
+<%- include('../partials/header') %>
+
+<div class="header">
+    <h1>Theme Details</h1><br>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Theme</th>
+            <th>Description</th>
+            <th>Font Color</th>
+            <th>Google Font Family</th>
+            <th>Main Background Color</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% themes.forEach(t => { %>
+            <tr>
+                <td><%= t.theme %></td>
+                <td><%= t.description %></td>
+                <td><%= t.styleset.fontColor %></td>
+                <td><%= t.styleset.googleFontFamily %></td>
+                <td><%= t.styleset.mainBackgroundColor %></td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
+
+
+
+
+<%- include('../partials/footer') %>
