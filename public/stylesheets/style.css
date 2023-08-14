@@ -81,3 +81,8 @@ th, td {
   width: 22px;
   border-radius: 5px;
 }
+
+.update-button {
+  border: none;
+  font-size: 20px;
+}
