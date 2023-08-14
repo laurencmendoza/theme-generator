@@ -8,9 +8,6 @@
 <ul>
     <li>Theme: <%= themes.theme %></li>
     <li>Description: <%= themes.description %></li>
-    <li>Font Color: <%= openAIResponse.fontColor %></li>
-    <li>Google Font Href: <a href="<%= openAIResponse.googleFontHref %>" target="_blank"><%= openAIResponse.googleFontHref %></a></li>
-    <li>Main Background Color: <%= openAIResponse.backgroundColor %></li>
 </ul>
 <br>
 <label> Select Style : 
@@ -36,16 +33,19 @@
         <td> </td>
     </tr>
     </thead>
-    <tr>
-        <td><%= openAIResponse.fontColor %></td>
-        <td><a href="<%= openAIResponse.googleFontHref %>" target="_blank"><%= openAIResponse.googleFontHref %></a></td>
-        <td><%= openAIResponse.backgroundColor %></td>
-        <td><button class="update-button" type="submit"> 🔄 </button></td>
-        <td> 
-             <button class="delete-button" type="submit">X</button>
-            </form>
-        </td>
-    </tr>
+    <tbody>
+        <% stylesets.forEach(styleset => { %>
+            <tr>
+                <td><%= styleset.fontColor %></td>
+                <td><a href="<%= styleset.googleFontFamily %>" target="_blank"><%= styleset.googleFontFamily %></a></td>
+                <td><%= styleset.mainBackgroundColor %></td>
+                <td><button class="update-button" type="submit"> 🔄 </button></td>
+                <td>
+                    <button class="delete-button" type="submit">X</button>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
 </table>
 
 
