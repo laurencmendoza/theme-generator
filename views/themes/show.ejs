@@ -10,18 +10,19 @@
     <li>Description: <%= themes.description %></li>
 </ul>
 <br>
-<label> Select Style :   
-    <select name="styleset">
-        <% stylesets.forEach((styleset, index) => { %>
-        <option value="<%=styleset._id%>"> Style ID # <%=index +1%></option>
 
-    <% }) %>
-</select>
-</label>
 
-<form action="/themes/<%=themes._id%>/stylesets" method="POST">
+<form action="/stylesets/<%=styleset._id%>?_method=PUT" method="POST">
+    <label> Select Style :   
+        <select name="styleset">
+            <% stylesets.forEach((styleset, index) => { %>
+            <option value="<%=styleset._id%>"> Style ID # <%=index +1%></option>
+        <% }) %>
+    </select>
+    </label>
 <button type="submit">Apply Style</button>
 </form> <br><br><br>
+
 
 <form action="/themes/<%=themes._id%>/stylesets" class="generate-style" method="POST">
 <button class="generate-button" type="submit">Generate Style</button>
