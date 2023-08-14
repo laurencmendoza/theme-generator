@@ -44,12 +44,11 @@ async function deleteTheme(req, res) {
 async function show(req, res) {
     try {
         const themes = await Theme.findById(req.params.id)
-        
-        const styleset = await Styleset.find({theme: themes._id})
+        const stylesets = await Styleset.find({theme: themes._id})
         res.render('themes/show', {
             title: `${themes.theme}`, 
             themes, 
-            styleset
+            stylesets
         })
     } catch(err) {
         res.render('themes/show', {errorMsg: err.message})
