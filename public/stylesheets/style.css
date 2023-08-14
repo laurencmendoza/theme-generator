@@ -72,3 +72,12 @@ th, td {
   font-size: 18px;
   margin-left: 70px;
 }
+
+.delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 3px;
+  width: 22px;
+  border-radius: 5px;
+}
