@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+<div class="header">
+    <h1>New Theme</h1><br>
+</div>
+
+
+<div class="new-form">
+<form action="/themes" method="POST">
+
+    <label class="new-input"> Theme Name : 
+        <input type="text" name="theme" style= "width: 600px; height: 30px;">
+    </label><br><br>
+
+    <label class="new-input"> Description : 
+        <input type="text" name="description" pattern="^.{1,40}$" style= "width: 615px; height: 150px;">
+    </label><br><br>
+
+    <button class="new-button" type="submit">Add Theme</button>
+</form>
+</div>
+
+<%- include('../partials/footer') %>
