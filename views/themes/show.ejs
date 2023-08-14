@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+
+<div class="header">
+    <h1>Theme Details</h1><br>
+</div>
+
+
+<ul>
+    <li>Theme: <%= themes.theme %></li>
+    <li>Description: <%= themes.description %></li>
+    <!-- Need to populate the styleset here -->
+</ul>
+<br>
+<label> Select Style : 
+    <select name="styleset">
+        <option value="">Style ID #1</option>
+        <option value="">Style ID #2</option>
+        <option value="">Style ID #3</option>
+    </select>
+</label>
+
+<button type="submit">Apply Style</button> <br><br><br>
+
+<button type="submit">Generate Style</button>
+
+<%- include('../partials/footer') %>
