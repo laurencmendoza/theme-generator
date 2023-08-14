@@ -25,14 +25,18 @@ async function createStyleset(req, res) {
 async function applyStyleset(req,res) {
     try {
         const appliedStyleset = req.body
-        const theme = await Theme.findById(req.params.tid)
-        // theme.defaultStyle = appliedStyleset 
-        res.send(appliedStyleset)
-
-        // res.render(`/themes/${req.params.tid}`, {
-            
-        //     appliedStyleset
-        // })
+        const styleset = await Styleset.findById(appliedStyleset.styleset)
+        const themes = await Theme.findById(styleset.theme)
+        const stylesets = await Styleset.find({theme: styleset.theme})
+        console.log
+        // res.send(appliedStyleset)
+        res.render(`themes/show`, {
+            title: `Theme Details`, 
+            appliedStyleset, 
+            themes, 
+            styleset, 
+            stylesets
+        })
     } catch (err) {
         console.log(err)
     }
