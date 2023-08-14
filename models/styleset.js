@@ -9,6 +9,9 @@ const stylesetSchema = new Schema({
     fontColor: {
         type: String
     }, 
+    googleFontHref: {
+        type: String
+    },
     googleFontFamily: {
         type: String
     }, 
