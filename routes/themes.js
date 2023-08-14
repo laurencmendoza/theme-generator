@@ -9,7 +9,7 @@ router.get('/', themesCtrl.index);
 router.get('/new', themesCtrl.new);
 
 // GET themes detail page
-// router.get('/:id', themesCtrl.show);
+router.get('/:id', themesCtrl.show);
 
 // POST a new theme to index
 router.post('/', themesCtrl.create);

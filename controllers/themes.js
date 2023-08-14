@@ -5,7 +5,8 @@ module.exports = {
     index,
     new: newTheme, 
     create, 
-    delete: deleteTheme
+    delete: deleteTheme, 
+    show
 }
 
 function index(req, res) {
@@ -36,5 +37,13 @@ async function deleteTheme(req, res) {
     })
     .catch(function(){
         console.log(err)
+    })
+}
+
+async function show(req, res) {
+    const themes = await Theme.findById(req.params.id)
+    res.render('themes/show', {
+        title: `${themes.theme}`, 
+        themes
     })
 }
