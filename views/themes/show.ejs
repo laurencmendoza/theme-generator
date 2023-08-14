@@ -19,7 +19,9 @@
 </select>
 </label>
 
-<button type="submit">Apply Style</button> <br><br><br>
+<form action="/themes/<%=themes._id%>/stylesets" method="POST">
+<button type="submit">Apply Style</button>
+</form> <br><br><br>
 
 <form action="/themes/<%=themes._id%>/stylesets" class="generate-style" method="POST">
 <button class="generate-button" type="submit">Generate Style</button>
