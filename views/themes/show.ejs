@@ -8,7 +8,9 @@
 <ul>
     <li>Theme: <%= themes.theme %></li>
     <li>Description: <%= themes.description %></li>
-    <!-- Need to populate the styleset here -->
+    <li>Font Color: <%= openAIResponse.fontColor %></li>
+    <li>Google Font Href: <a href="<%= openAIResponse.googleFontHref %>" target="_blank"><%= openAIResponse.googleFontHref %></a></li>
+    <li>Main Background Color: <%= openAIResponse.backgroundColor %></li>
 </ul>
 <br>
 <label> Select Style : 
@@ -21,18 +23,24 @@
 
 <button type="submit">Apply Style</button> <br><br><br>
 
-<button type="submit">Generate Style</button>
+
+<button class="generate-button" type="submit">Generate Style</button>
 
 <table>
     <thead>
-        <!-- Need to populate the styleset from chatGPT here -->
-
+    <tr>
+        <td>Font Color</td>
+        <td>Google Font Family</td>
+        <td>Background Color</td>
+        <td> </td>
+        <td> </td>
+    </tr>
     </thead>
     <tr>
-        <td> Font Color </td>
-        <td> Google Font Family </td>
-        <td> Main Background Color </td>
-        <td> <button class="update-button" type="submit"> 🔄 </button> </td>
+        <td><%= openAIResponse.fontColor %></td>
+        <td><a href="<%= openAIResponse.googleFontHref %>" target="_blank"><%= openAIResponse.googleFontHref %></a></td>
+        <td><%= openAIResponse.backgroundColor %></td>
+        <td><button class="update-button" type="submit"> 🔄 </button></td>
         <td> 
              <button class="delete-button" type="submit">X</button>
             </form>
