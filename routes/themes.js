@@ -12,6 +12,6 @@ router.get('/new', themesCtrl.new)
 // router.get('/:id', themesCtrl.show)
 
 // POST a new theme to index
-// router.post('/', themesCtrl.create)
+router.post('/', themesCtrl.create)
 
 module.exports = router;

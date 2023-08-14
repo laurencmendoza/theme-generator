@@ -3,7 +3,8 @@ const Styleset = require('../models/styleset')
 
 module.exports = {
     index,
-    new: newTheme
+    new: newTheme, 
+    create
 }
 
 function index(req, res) {
@@ -15,4 +16,14 @@ function index(req, res) {
 
 function newTheme(req, res) {
     res.render('themes/new', {title: 'New Theme', errorMsg: ''})
+}
+
+async function create(req, res) {
+    const themeData = {...req.body}
+    try {
+        const createdTheme = await Theme.create(themeData)
+        res.redirect("/themes/");
+    } catch (err) {
+        res.render("themes/new", {errorMsg: err.message});
+    }
 }
