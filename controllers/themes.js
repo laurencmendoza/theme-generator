@@ -4,7 +4,8 @@ const Styleset = require('../models/styleset')
 module.exports = {
     index,
     new: newTheme, 
-    create
+    create, 
+    delete: deleteTheme
 }
 
 function index(req, res) {
@@ -26,4 +27,14 @@ async function create(req, res) {
     } catch (err) {
         res.render("themes/new", {errorMsg: err.message});
     }
+}
+
+async function deleteTheme(req, res) {
+    await Theme.deleteOne({_id: req.params.id})
+    .then(function() {
+        res.redirect('/themes/')
+    })
+    .catch(function(){
+        console.log(err)
+    })
 }
