@@ -10,12 +10,13 @@
     <li>Description: <%= themes.description %></li>
 </ul>
 <br>
-<label> Select Style : 
+<label> Select Style :   
     <select name="styleset">
-        <option value="">Style ID #1</option>
-        <option value="">Style ID #2</option>
-        <option value="">Style ID #3</option>
-    </select>
+        <% stylesets.forEach((styleset, index) => { %>
+        <option value="<%=styleset._id%>"> Style ID # <%=index +1%></option>
+
+    <% }) %>
+</select>
 </label>
 
 <button type="submit">Apply Style</button> <br><br><br>
@@ -27,8 +28,10 @@
 <table>
     <thead>
     <tr>
+        <td>Style ID #</td>
         <td>Font Color</td>
         <td>Google Font Family</td>
+        <td>Google Font Link</td>
         <td>Background Color</td>
         <td> </td>
         <td> </td>
@@ -36,13 +39,16 @@
     </thead>
 
     <tbody>
-        <% stylesets.forEach(styleset => { %>
+        <% stylesets.forEach((styleset, index) => { %>
             <tr>
+                <td><%= index + 1 %></td>
                 <td><%= styleset.fontColor %></td>
-                <td><a href="<%= styleset.googleFontFamily %>" target="_blank"><%= styleset.googleFontFamily %></a></td>
+                <td><%= styleset.googleFontFamily %></td>
+                <td><a href="<%= styleset.googleFontHref %>" target="_blank"><%= styleset.googleFontHref %></a></td>
                 <td><%= styleset.mainBackgroundColor %></td>
                 <td><button class="update-button" type="submit"> 🔄 </button></td>
                 <td>
+                    <form action="/themes/<%= themes._id %>?_method=DELETE" method="POST"></form>
                     <button class="delete-button" type="submit">X</button>
                 </td>
             </tr>
