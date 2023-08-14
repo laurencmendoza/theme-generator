@@ -20,8 +20,9 @@
 
 <button type="submit">Apply Style</button> <br><br><br>
 
-
+<form action="/themes/<%=themes._id%>/stylesets" class="generate-style" method="POST">
 <button class="generate-button" type="submit">Generate Style</button>
+</form>
 
 <table>
     <thead>
@@ -33,6 +34,7 @@
         <td> </td>
     </tr>
     </thead>
+
     <tbody>
         <% stylesets.forEach(styleset => { %>
             <tr>
