@@ -45,10 +45,12 @@ async function show(req, res) {
     try {
         const themes = await Theme.findById(req.params.id)
         const stylesets = await Styleset.find({theme: themes._id})
+        const appliedStyleset = await Styleset.find({})
         res.render('themes/show', {
             title: `${themes.theme}`, 
             themes, 
-            stylesets
+            stylesets, 
+            appliedStyleset
         })
     } catch(err) {
         res.render('themes/show', {errorMsg: err.message})

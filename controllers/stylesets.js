@@ -3,7 +3,8 @@ const Styleset = require('../models/styleset')
 const openAI = require('../config/openai')
 
 module.exports = {
-    create: createStyleset
+    create: createStyleset, 
+    apply: applyStyleset
 }
 
 
@@ -21,3 +22,18 @@ async function createStyleset(req, res) {
     }
 }
 
+async function applyStyleset(req,res) {
+    try {
+        const appliedStyleset = req.body
+        const theme = await Theme.findById(req.params.tid)
+        // theme.defaultStyle = appliedStyleset 
+        res.send(appliedStyleset)
+
+        // res.render(`/themes/${req.params.tid}`, {
+            
+        //     appliedStyleset
+        // })
+    } catch (err) {
+        console.log(err)
+    }
+}

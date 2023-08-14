@@ -10,6 +10,9 @@ const themeSchema = new Schema({
     description: {
         type: String, 
         match: /^.{1,300}$/
+    }, 
+    defaultStyle: {
+        type: String
     }
 }, {
     timestamps: true
