@@ -58,3 +58,17 @@ th, td {
   border-bottom: 1px solid black; 
   text-align: center;
 }
+
+.new-form {
+    display: block;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    margin-left: -50px;
+}
+
+.new-button {
+  font-size: 18px;
+  margin-left: 70px;
+}
