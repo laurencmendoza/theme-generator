@@ -4,4 +4,25 @@
     <h1> All Themes </h1>
 </div>
 
+<table>
+    <thead>
+        <tr>
+            <th> Theme </th>
+            <th> Description </th>
+            <th>  </th>
+            <th>  </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% themes.forEach(function(t) { %>
+        <tr>
+            <td> <%= t.theme %> </td>
+            <td> <%= t.description %> </td>
+            <td> Delete (test) </td>
+            <td> Detail (test) </td>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>
+
 <%- include('../partials/footer') %>
