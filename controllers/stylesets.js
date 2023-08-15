@@ -15,6 +15,9 @@ async function createStyleset(req, res) {
         const stylesetData = {...openAIResponse}
         console.log(stylesetData)
         stylesetData.theme = req.params.id
+        stylesetData.user = req.user._id;
+        stylesetData.userName = req.user.name;
+        stylesetData.userAvatar = req.user.avatar;
         await Styleset.create(stylesetData)
         res.redirect(`/themes/${req.params.id}`)
     } catch (err) {
