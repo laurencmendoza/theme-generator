@@ -10,11 +10,14 @@ module.exports = {
     show
 }
 
-function index(req, res) {
-    // res.render('themes/index', {title: 'Theme List', errorMsg: ''})
-    Theme.find({})
-    .then(results=>res.render('themes/index', {title: "Theme List", themes: results}))
-    .catch(err=>res.send(err))
+async function index(req, res) {
+    try {
+        const themes = await Theme.find({});
+        res.render('themes/index', {title: "Theme List", themes})
+        
+    } catch (err) {
+        res.render("themes/index", {errorMsg: err.message});
+    }
 }
 
 function newTheme(req, res) {
