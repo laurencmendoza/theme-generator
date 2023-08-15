@@ -1,9 +1,11 @@
 <%- include('../partials/header') %>
 <style>
-    /* if there is no currentStyle apply defaylt style, otherwise apply currentStyle */
-    /* body {
-        background-color: themes.defaultStyle.fontSize !important;
-    } */
+    <% const defaultTheme = JSON.parse(themes.defaultStyle) %>
+    <% console.log(defaultTheme); %>
+    body {
+        background-color: <%= defaultTheme.backgroundColor %> !important;
+    } 
+
 </style>
 
 <div class="header">

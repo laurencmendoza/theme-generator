@@ -43,7 +43,7 @@ async function deleteTheme(req, res) {
 
 async function show(req, res) {
     try {
-        const themes = await Theme.findById(req.params.id)
+        const themes = await Theme.findById(req.params.id).populate("currentStyle")
         const stylesets = await Styleset.find({theme: themes._id})
         const appliedStyleset = await Styleset.find({})
         res.render('themes/show', {
