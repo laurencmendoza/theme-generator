@@ -1,4 +1,10 @@
 <%- include('../partials/header') %>
+<style>
+    /* if there is no currentStyle apply defaylt style, otherwise apply currentStyle */
+    /* body {
+        background-color: themes.defaultStyle.fontSize !important;
+    } */
+</style>
 
 <div class="header">
     <h1>Theme Details</h1><br>
@@ -56,16 +62,11 @@
                 <td><%= index + 1 %></td>
                 <td><%= styleset.fontColor %></td>
                 <td>
-                    <a href="<%= styleset.googleFontHref %>" target="_blank"><%= styleset.googleFontFamily %></a>
+                    <%= styleset.googleFontFamily %>&nbsp;
+                     <a href="<%= styleset.googleFontHref %>" target="_blank">
+                        <img src="https://i.imgur.com/9lHvVix.png" alt="Link" width="20" height="20">
+                    </a> 
                 </td>
-                <!-- <td>
-                    <%= styleset.googleFontFamily %> 
-                    <a href="<%= styleset.googleFontHref %>" target="_blank">📋</a>
-                </td> -->
-                    <!-- <a href="<%= styleset.googleFontHref %>" target="_blank">
-                        <img src="/assets/copy.png" alt="Link" width="20" height="20">
-                    </a> -->
-                <!-- </td> -->
                 <td><%= styleset.mainBackgroundColor %></td>
                 <td>
                     <%console.log(styleset, styleset.user)%>
