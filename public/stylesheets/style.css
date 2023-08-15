@@ -86,3 +86,25 @@ th, td {
   border: none;
   font-size: 20px;
 }
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 17px;
+}
+
+.login img {
+  height: 17px;
+}
+
+.review-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-user img {
+  border-radius: 50%;
+  height: 40px;
+}

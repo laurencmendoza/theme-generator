@@ -24,26 +24,30 @@
 <button type="submit">Apply Style</button>
 </form> <br><br><br>
 
+<% if (user) { %>
 <form action="/themes/<%=themes._id%>/stylesets" class="generate-style" method="POST">
 <button class="generate-button" type="submit">Generate Style</button>
 </form>
+<% } %>
 
 <table>
     <thead>
     <tr>
-        <td>Style ID #</td>
-        <td>Font Color</td>
-        <td>Google Font Family</td>
-        <td>Google Font Link</td>
-        <td>Background Color</td>
-        <td> </td>
-        <td> </td>
+        <th>User</th>
+        <th>Style ID #</th>
+        <th>Font Color</th>
+        <th>Google Font Family</th>
+        <th>Google Font Link</th>
+        <th>Background Color</th>
+        <th> </th>
+        <th> </th>
     </tr>
     </thead>
 
     <tbody>
         <% stylesets.forEach((styleset, index) => { %>
             <tr>
+                <td class="review-user"><img alt="avatar" src="<%= styleset.userAvatar %>" referrerpolicy="no-referrer" ><%= styleset.userName %></td>
                 <td><%= index + 1 %></td>
                 <td><%= styleset.fontColor %></td>
                 <td><%= styleset.googleFontFamily %></td>
