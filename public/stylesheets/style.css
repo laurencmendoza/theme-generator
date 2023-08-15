@@ -2,9 +2,6 @@
   background-color: rgb(255, 255, 255);
 }
 
-
-
-
 body {
   padding: 0 15px 0 15px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -72,7 +69,7 @@ a {
 }
 .menu p:hover {
   text-decoration: none;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   color: #313131;
   font-weight: 700;
   margin-left: 10px;
@@ -116,7 +113,7 @@ th, td {
 
 .delete-button {
   background-color: rgb(249, 66, 66);
-  color: white;
+  color: rgb(255, 255, 255);
   border: none;
   padding: 2px;
   width: 27px;
