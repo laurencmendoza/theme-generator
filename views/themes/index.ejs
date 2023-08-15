@@ -23,9 +23,11 @@
 
                 <td><a href="/themes/<%= t._id %>">DETAILS</a></td>
                 <td> 
+                    <% if (user?._id.equals(styleset.user)) { %>
                     <form action="/themes/<%= t._id %>?_method=DELETE" class="delete-form" method="POST">
                     <button class="delete-button" type="submit">X</button>
                     </form>
+                    <% } %>
                 </td>
             </tr>
             <% }); %>
