@@ -58,20 +58,15 @@
     <tbody>
         <% stylesets.forEach((styleset, index) => { %>
             <tr>
-                <td class="review-user"><img alt="avatar" src="<%= styleset.userAvatar %>" referrerpolicy="no-referrer" ><%= styleset.userName %></td>
+                <td class="review-user"><img alt="avatar" src="<%= styleset.userAvatar %>" referrerpolicy="no-referrer" >&nbsp;&nbsp;<%= styleset.userName %></td>
                 <td><%= index + 1 %></td>
                 <td><%= styleset.fontColor %></td>
                 <td>
-                    <a href="<%= styleset.googleFontHref %>" target="_blank"><%= styleset.googleFontFamily %></a>
+                    <%= styleset.googleFontFamily %>&nbsp;
+                     <a href="<%= styleset.googleFontHref %>" target="_blank">
+                        <img src="https://i.imgur.com/9lHvVix.png" alt="Link" width="20" height="20">
+                    </a> 
                 </td>
-                <!-- <td>
-                    <%= styleset.googleFontFamily %> 
-                    <a href="<%= styleset.googleFontHref %>" target="_blank">📋</a>
-                </td> -->
-                    <!-- <a href="<%= styleset.googleFontHref %>" target="_blank">
-                        <img src="/assets/copy.png" alt="Link" width="20" height="20">
-                    </a> -->
-                <!-- </td> -->
                 <td><%= styleset.mainBackgroundColor %></td>
                 <td>
                     <form action="/themes/<%=themes._id%>/stylesets/<%=styleset._id%>?_method=PUT" method="POST">
