@@ -4,29 +4,34 @@
     <h1> All Themes </h1>
 </div>
 
-<table>
-    <thead>
-        <tr>
-            <th> Theme </th>
-            <th> Description </th>
-            <th>  </th>
-            <th>  </th>
-        </tr>
-    </thead>
-    <tbody>
-        <% themes.forEach(function(t) { %>
-        <tr>
-            <td> <%= t.theme %> </td>
-            <td> <%= t.description %> </td>
-            <td> 
-                <form action="/themes/<%= t._id %>?_method=DELETE" class="delete-form" method="POST">
-                 <button class="delete-button" type="submit">X</button>
-                </form>
-            </td>
-            <td><a href="/themes/<%= t._id %>">DETAILS</a></td>
-        </tr>
-        <% }); %>
-    </tbody>
-</table>
+<div class="row">
+    <div class="col" style="padding: 25px">
+    <table class="table">
+        <thead>
+            <tr >
+                <th class="tableHeader"> Theme </th>
+                <th class="tableHeader"> Description </th>
+                <th class="tableHeader">  </th>
+                <th class="tableHeader">  </th>
+            </tr>
+        </thead>
+        <tbody>
+            <% themes.forEach(function(t) { %>
+            <tr>
+                <td> <%= t.theme %> </td>
+                <td> <%= t.description %> </td>
+
+                <td><a href="/themes/<%= t._id %>">DETAILS</a></td>
+                <td> 
+                    <form action="/themes/<%= t._id %>?_method=DELETE" class="delete-form" method="POST">
+                    <button class="delete-button" type="submit">X</button>
+                    </form>
+                </td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+</div>
 
 <%- include('../partials/footer') %>
