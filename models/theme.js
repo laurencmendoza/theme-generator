@@ -13,7 +13,13 @@ const themeSchema = new Schema({
     }, 
     defaultStyle: {
         type: String
-    }
+    },
+    // Do not change user, userName and userAvatar propeeties. They are required when using Google OAuth
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+      }
 }, {
     timestamps: true
 })
