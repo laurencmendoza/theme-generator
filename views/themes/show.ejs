@@ -5,7 +5,7 @@
 </div>
 
 
-<ul class="desc">
+<ul class="description">
     <li>Theme: <%= themes.theme %></li>
     <li>Description: <%= themes.description %></li>
 </ul>
@@ -21,7 +21,7 @@
             <option value="<%=styleset._id%>"> Style ID # <%=index +1%></option>
         <% }) %>
     </select>
-    </label>
+    </label> ▶️
 <button class="apply-button" type="submit">Apply Style</button>
 </form> <br><br><br>
 
@@ -52,7 +52,7 @@
                 <td><%= styleset.mainBackgroundColor %></td>
                 <td><button class="update-button" type="submit"> 🔄 </button></td>
                 <td>
-                    <form action="/themes/<%=themes._id%>/stylesets%>?_method=DELETE" method="POST">
+                    <form action="/themes/<%=themes._id%>/stylesets?_method=DELETE" method="POST">
                     <button class="delete-button" type="submit">X</button>
                     </form>
                 </td>
