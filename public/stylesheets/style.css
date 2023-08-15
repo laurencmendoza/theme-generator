@@ -52,8 +52,9 @@ a {
 .generate-button:hover {
   background-color:rgb(128, 128, 128);
   color: rgb(255, 255, 255);
-} 
 
+} 
+  
 .menu {
   background-color: rgb(128, 128, 128);
 }

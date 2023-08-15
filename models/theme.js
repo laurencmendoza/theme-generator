@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const defaultTheme = JSON.stringify({fontColor: "rgb(0,0,0)", googleFont: "'Bricolage Grotesque', sans-serif", backgroundColor: "rgb(255,0,0)"})
 
 const Schema = mongoose.Schema
 
@@ -13,7 +14,7 @@ const themeSchema = new Schema({
     }, 
     defaultStyle: {
         type: String,
-        // default: {fontSize: "16px", googleFont: "href link"}
+        default: defaultTheme 
     },
     currentStyle: {
         type: Schema.Types.ObjectId,
