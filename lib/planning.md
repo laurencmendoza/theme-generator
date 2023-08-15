@@ -101,8 +101,10 @@ __Note:__ Each Theme have zero or many Stylesets. Each Styleset belongs to one a
 | TG-15      | Truncate theme description | AAU, when viewing the list of themes, I want to see theme description text truncated. |  | 2 | Low | 2 | TG-1 |
 | TG-16      | Export default theme style in CSS format | AAU, when viewing the list of themes, I want to export a default theme style in CSS format |  | 3 | High | 3 | TG-9 |
 | TG-17      | Get customed style properties | AAU, I want to get customed style properties, not only those that were hardcoded initially |  | 3 | High | 3 | Tg-6 |
-| TG-18      | Sign up using Google account | AAU, I want to be able to sign up using Google account |  | 2 | Moderate | 2 |  |
-| TG-19      | Log in using Google account | AAAH, I want to be able to log in using Google account. |  | 2 | Moderate | 2 | TG-18 |
-| TG-20      | Make themes and styles private | AAAH, I want the themes created under my account to be private so that nobody except me could add, view, delete themes, and generate, view, update, delete styles. |  | 2 | High | 2 | TG-19 |
-| TG-21      | Provide individual access | AAAH, I want to be able to share my private themes with other account holders by providing them with individual access (edit or view rights) |  | 2 | High | 2 | TG-20 |
-| TG-22      | Provide shareable link | AAAH, I want to be able to share my private themes with other account holders by providing them a link (edit or view rights) |  | 2 | High | 2 | TG-20 |
+| TG-18      | Sign up using Google account | AAU, I want to be able to sign up using Google account |  | 2 | Moderate | 1 |  |
+| TG-19      | Log in using Google account | AAAH, I want to be able to log in using Google account. |  | 2 | Moderate | 1 | TG-18 |
+| TG-20      | Add Theme only if logged in | AAU, I want to access Add Theme link and be able to add a new theme only if I am logged in user |  | 2 | Low | 1 | TG-19 |
+| TG-21      | Generate styleset only if logged in | AAU, I want to be able to generate a new styleset only if I am logged in user |  | 2 | Low | 1 | TG-19 |
+| TG-22      | Delete theme only if created it | AAU, I want to be able to delete a theme only if I am logged in user and created this theme |  | 2 | Low | 1 | TG-19 |
+| TG-23      | Update styleset only if created it | AAU, I want to be able to update a styleset only if I am logged in user and created this styleset |  | 2 | Low | 1 | TG-19 |
+| TG-24      | Delete styleset only if created it | AAU, I want to be able to delete a styleset only if I am logged in user and created this styleset |  | 2 | Low | 1 | TG-19 |
