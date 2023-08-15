@@ -5,12 +5,13 @@
 </div>
 
 
-<ul>
+<ul class="description">
     <li>Theme: <%= themes.theme %></li>
     <li>Description: <%= themes.description %></li>
 </ul>
 <br>
-
+<div class="row">
+    <div class="col" style="padding: 25px">
 <% stylesets.forEach((styleset, index) => { %>
 <form action="/stylesets/<%=styleset._id%>?_method=PUT" method="POST">
     <% }) %>
@@ -20,24 +21,26 @@
             <option value="<%=styleset._id%>"> Style ID # <%=index +1%></option>
         <% }) %>
     </select>
-    </label>
-<button type="submit">Apply Style</button>
-</form> <br><br><br>
+    </label> ▶️
+<button class="apply-button" type="submit">Apply Style</button>
+</form> <br>
+
+<hr>
 
 <form action="/themes/<%=themes._id%>/stylesets" class="generate-style" method="POST">
 <button class="generate-button" type="submit">Generate Style</button>
-</form>
+</form><br>
 
-<table>
+<table class="table">
     <thead>
     <tr>
-        <td>Style ID #</td>
-        <td>Font Color</td>
-        <td>Google Font Family</td>
-        <td>Google Font Link</td>
-        <td>Background Color</td>
-        <td> </td>
-        <td> </td>
+        <td class="tableHeader">Style ID #</td>
+        <td class="tableHeader">Font Color</td>
+        <td class="tableHeader">Google Font Family</td>
+        <td class="tableHeader">Google Font Link</td>
+        <td class="tableHeader">Background Color</td>
+        <td class="tableHeader"> </td>
+        <td class="tableHeader"> </td>
     </tr>
     </thead>
 
@@ -47,17 +50,19 @@
                 <td><%= index + 1 %></td>
                 <td><%= styleset.fontColor %></td>
                 <td><%= styleset.googleFontFamily %></td>
-                <td><a href="<%= styleset.googleFontHref %>" target="_blank"><%= styleset.googleFontHref %></a></td>
+                <td><a href="<%= styleset.googleFontHref %>" target="_blank">LINK</a></td>
                 <td><%= styleset.mainBackgroundColor %></td>
                 <td><button class="update-button" type="submit"> 🔄 </button></td>
                 <td>
-                    <form action="/themes/<%= themes._id %>?_method=DELETE" method="POST"></form>
+                    <form action="/themes/<%=themes._id%>/stylesets?_method=DELETE" method="POST">
                     <button class="delete-button" type="submit">X</button>
+                    </form>
                 </td>
             </tr>
         <% }) %>
     </tbody>
 </table>
-
+</div>
+</div>
 
 <%- include('../partials/footer') %>
