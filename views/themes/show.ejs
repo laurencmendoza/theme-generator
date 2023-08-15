@@ -65,7 +65,7 @@
                 <td><%= styleset.mainBackgroundColor %></td>
                 <td><button class="update-button" type="submit"> 🔄 </button></td>
                 <td>
-                    <form action="/themes/<%=themes._id%>/<%=stylesets._id%>?_method=DELETE" method="POST">
+                    <form action="/themes/<%=themes._id%>/stylesets/<%=styleset._id%>?_method=DELETE" method="POST">
                     <button class="delete-button" type="submit">X</button>
                     </form>
                 </td>
