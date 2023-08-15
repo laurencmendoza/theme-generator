@@ -4,8 +4,7 @@ const openAI = require('../config/openai')
 
 module.exports = {
     create: createStyleset, 
-    apply: applyStyleset, 
-    delete: deleteStyleset
+    apply: applyStyleset
 }
 
 
@@ -44,14 +43,4 @@ async function applyStyleset(req,res) {
     } catch (err) {
         console.log(err)
     }
-}
-
-async function deleteStyleset(req, res) {
-    await Styleset.deleteOne({_id: req.params.ssid})
-    .then(function() {
-        res.redirect(`/themes/${req.params.tid}`)
-    })
-    .catch(function(){
-        console.log(err)
-    })
 }
