@@ -13,6 +13,10 @@ const themeSchema = new Schema({
     }, 
     defaultStyle: {
         type: String
+    },
+    currentStyle: {
+        type: Schema.Types.ObjectId,
+        ref: 'Styleset'
     }
 }, {
     timestamps: true
