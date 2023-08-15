@@ -147,6 +147,7 @@ authentication
 .review-user img {
   border-radius: 50%;
   height: 40px;
+}
 
 hr {
   border: 0;
@@ -154,5 +155,4 @@ hr {
   background: transparent;
   border-top: 1px dotted rgb(51, 51, 51); 
   margin: 10px 0;   
-main
 }
