@@ -12,7 +12,8 @@ const themeSchema = new Schema({
         match: /^.{1,300}$/
     }, 
     defaultStyle: {
-        type: String
+        type: String,
+        // default: {fontSize: "16px", googleFont: "href link"}
     },
     currentStyle: {
         type: Schema.Types.ObjectId,
