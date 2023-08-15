@@ -1,43 +1,49 @@
 * {
-  background-color: rgb(255,251,254);
+  background-color: rgb(255, 255, 255);
 }
 
 
 body {
-  padding: 50px;
+  padding: 0 15px 0 15px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  border: 2px solid rgb(77, 127, 255);
-  background-color: rgb(60, 115, 255);
-  border-radius: 20px;
-  color: rgb(255, 255, 255);
+  background-color: rgb(184, 204, 255);
   transition: .3s;
+  text-align: center;
 }
 
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  padding: 1%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgb(250, 250, 243);
-  /* border-bottom: 1px solid rgb(137, 137, 137); */
+.tableHeader {
+  text-align: center !important;
+  background-color: rgb(128, 128, 128);
+  color: rgb(255, 255, 255);
 }
 
-nav > a {
+.desc li {
+  font-size: 22px;
+}
+
+.apply-btn {
+  width: 300px;
+  height: 40px;
+}
+
+.menu {
+  background-color: rgb(128, 128, 128);
+}
+
+.menu p {
   text-decoration: none;
   color: rgb(255, 255, 255);
   padding: 12px;
+  font-size: 20px;
+  width: 100%;
+  background-color: transparent;
 }
 
-nav > a:hover:not(.active) {
-  box-shadow: 5px 5px rgb(153, 189, 255);
+nav > a:hover {
+  font-weight: bold;
   transition: .3s;
 }
 
@@ -48,14 +54,12 @@ nav > a:hover:not(.active) {
 }
 
 table {
-  margin-top: 50px;
+  margin-top: 0px;
   width: 100%; 
   height: 100px; 
 }
 
 th, td {
-  padding: 20px; 
-  border-bottom: 1px solid black; 
   text-align: center;
 }
 
@@ -74,11 +78,12 @@ th, td {
 }
 
 .delete-button {
-  background-color: red;
+  background-color: rgb(249, 66, 66);
   color: white;
   border: none;
-  padding: 3px;
-  width: 22px;
+  padding: 2px;
+  width: 27px;
+  height: 27px;
   border-radius: 5px;
 }
 
