@@ -21,10 +21,10 @@ const stylesetSchema = new Schema({
     menuBackgroundColor: {
         type: String
     },
-    applyButtonColor: {  // New property
+    tableHeaderColor: {
         type: String
     },
-    generateButtonColor: {  // New property
+    buttonColor: {  // New property
         type: String
     },
     // Do not change user, userName and userAvatar propeeties. They are required when using Google OAuth

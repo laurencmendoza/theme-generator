@@ -9,7 +9,7 @@
         <% if (stylesets.currentStyle) { %>
 
         <% } else { %>
-         background-color: <%= defaultTheme.backgroundColor %> !important;
+         background-color: <%= defaultTheme.mainbBackgroundColor %> !important;
          color: <%= defaultTheme.fontColor %> !important;
          font-family: <%- defaultTheme.googleFont %> !important;
          .menu {
@@ -18,12 +18,12 @@
         .tableHeader {
                 background-color: <%= defaultTheme.tableHeaderColor %> !important;
         }
-        .apply-button {
-            background-color: <%= defaultTheme.applyButtonColor %> !important;
+        .apply-button, .generate-button {
+            background-color: <%= defaultTheme.buttonColor %> !important;
         }
-        .generate-button {
+        /* .generate-button {
             background-color: <%= defaultTheme.generateButtonColor %> !important;
-        }
+        } */
         <% } %>
     } 
 
@@ -80,6 +80,9 @@
         <th class="tableHeader">Google Font Family</th>
         <!-- <th class="tableHeader">Google Font Link</th> -->
         <th class="tableHeader">Background Color</th>
+        <th class="tableHeader">Navigation Color</th>
+        <th class="tableHeader">Table Header Color</th>
+        <th class="tableHeader">Button Color</th>
         <th class="tableHeader"> </th>
         <th class="tableHeader"> </th>
     </tr>
@@ -107,6 +110,11 @@
                     <button class="delete-button" type="submit">X</button>
                     </form>
                 </td>
+
+                <td><%= styleset.menuBackgroundColor %></td>
+                <td><%= styleset.tableHeaderColor %></td>
+                <td><%= styleset.buttonColor %></td>
+
             </tr>
         <% }) %>
     </tbody>
