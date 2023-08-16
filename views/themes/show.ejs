@@ -12,7 +12,7 @@
          background-color: <%= defaultTheme.mainbBackgroundColor %> !important;
          color: <%= defaultTheme.fontColor %> !important;
          font-family: <%- defaultTheme.googleFont %> !important;
-         .menu {
+        .menu {
                 background-color: <%= defaultTheme.menuBackgroundColor %> !important;
         }
         .tableHeader {
@@ -101,6 +101,10 @@
                     </a> 
                 </td>
                 <td><%= styleset.mainBackgroundColor %></td>
+                <td><%= styleset.menuBackgroundColor %></td>
+                <td><%= styleset.tableHeaderColor %></td>
+                <td><%= styleset.buttonColor %></td>
+                
                 <td>
                     <form action="/themes/<%=themes._id%>/stylesets/<%=styleset._id%>?_method=PUT" method="POST">
                     <button class="update-button" type="submit" value="<%= styleset._id%>"> ↺ </button></td>
@@ -110,10 +114,6 @@
                     <button class="delete-button" type="submit">X</button>
                     </form>
                 </td>
-
-                <td><%= styleset.menuBackgroundColor %></td>
-                <td><%= styleset.tableHeaderColor %></td>
-                <td><%= styleset.buttonColor %></td>
 
             </tr>
         <% }) %>

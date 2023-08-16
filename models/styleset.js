@@ -24,7 +24,7 @@ const stylesetSchema = new Schema({
     tableHeaderColor: {
         type: String
     },
-    buttonColor: {  // New property
+    buttonColor: {  
         type: String
     },
     // Do not change user, userName and userAvatar propeeties. They are required when using Google OAuth
