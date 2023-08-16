@@ -60,7 +60,7 @@ async function deleteStyleset(req, res) {
 async function updateStyleset(req, res) {
     try {
         const themes = await Theme.findById(req.params.tid)
-        const openAIResponse = await openAI.sendRequest(`Theme: ${themes.theme}. Theme description: ${themes.description} Respond with a JSON-like answer with keys fontColor, googleFontHref, googleFontFamily, and mainBackgroundColor on what font color rgba, public Google font HTML link tag, Google font family in CSS format, and background color rgba could be used for this theme respectively`)
+        const openAIResponse = await openAI.sendRequest(`Theme: ${themes.theme}. Theme description: ${themes.description} Respond with a JSON-like answer with keys fontColor, googleFontHref, googleFontFamily, and mainBackgroundColor on what font color rgba, public Google font href, Google font family in CSS format, and background color rgba could be used for this theme respectively`)
         const stylesetData = {...openAIResponse}
         // stylesetData.theme = req.params.tid
         stylesetData.user = req.user._id;
