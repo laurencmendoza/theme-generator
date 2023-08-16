@@ -1,10 +1,20 @@
 <%- include('../partials/header') %>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+
 <style>
     <% const defaultTheme = JSON.parse(themes.defaultStyle) %>
     <% console.log(defaultTheme); %>
     body {
-        background-color: <%= defaultTheme.backgroundColor %> !important;
+        <% if (stylesets.currentStyle) { %>
+
+        <% } else { %>
+         background-color: <%= defaultTheme.backgroundColor %> !important;
+         color: <%= defaultTheme.fontColor %> !important;
+         font-family: <%- defaultTheme.googleFont %> !important;
+        <% } %>
     } 
+    /* font-family: 'Roboto Mono', monospace !important; */
 
 </style>
 
