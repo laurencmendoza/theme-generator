@@ -59,8 +59,13 @@
     <label> Select Style :   
         <select name="stylesetId">
             <% stylesets.forEach((styleset, index) => { %>
+            <% if (themes.currentStyle.equals(styleset)) { %>
+                <% console.log("applied style " + themes.currentStyle+ "styleset " + styleset)%>
+                <option value="<%=themes.currentStyle._id%>" selected> Style ID # <%=index +1%></option>
+            <% } else { %>
             <option value="<%=styleset._id%>"> Style ID # <%=index +1%></option>
-        <% }) %>
+            <% } %>
+            <% }) %>
     </select>
     </label> ▶️
 <button class="apply-button" type="submit">Apply Style</button>
