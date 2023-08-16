@@ -3,10 +3,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 
 <style>
-    <% const defaultTheme = JSON.parse(themes.defaultStyle) %>
-    <% console.log(defaultTheme); %>
-    body {
-        <% if (stylesets.currentStyle) { %>
+ <% const defaultTheme = JSON.parse(themes.defaultStyle) %>
+<% console.log(defaultTheme); %>
+body {
+    <% if (stylesets.currentStyle) { %>
 
         <% } else { %>
          background-color: <%= defaultTheme.backgroundColor %> !important;
@@ -76,7 +76,7 @@
     <tbody>
         <% stylesets.forEach((styleset, index) => { %>
             <tr>
-                <td class="review-user"><img alt="avatar" src="<%= styleset.userAvatar %>" referrerpolicy="no-referrer" >&nbsp;&nbsp;<%= styleset.userName %></td>
+                <td class="styleset-user"><img alt="avatar" src="<%= styleset.userAvatar %>" referrerpolicy="no-referrer" >&nbsp;&nbsp;<%= styleset.userName %></td>
                 <td><%= index + 1 %></td>
                 <td><%= styleset.fontColor %></td>
                 <td>
@@ -87,13 +87,17 @@
                 </td>
                 <td><%= styleset.mainBackgroundColor %></td>
                 <td>
+                    <% if (user?._id.equals(styleset.user)) { %>
                     <form action="/themes/<%=themes._id%>/stylesets/<%=styleset._id%>?_method=PUT" method="POST">
                     <button class="update-button" type="submit" value="<%= styleset._id%>"> ↺ </button></td>
                     </form>
+                    <% } %>
                 <td>
+                    <% if (user?._id.equals(styleset.user)) { %>
                     <form action="/themes/<%=themes._id%>/stylesets/<%=styleset._id%>?_method=DELETE" method="POST">
                     <button class="delete-button" type="submit">X</button>
                     </form>
+                    <% } %>
                 </td>
             </tr>
         <% }) %>

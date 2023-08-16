@@ -181,13 +181,13 @@ authentication
   height: 20px;
 }
 
-.review-user {
+.styleset-user, .theme-user {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.review-user img {
+.styleset-user img, .theme-user img {
   border-radius: 50%;
   height: 40px;
 }

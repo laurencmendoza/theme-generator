@@ -16,10 +16,18 @@ const themeSchema = new Schema({
         type: String,
         default: defaultTheme 
     },
+
     currentStyle: {
         type: Schema.Types.ObjectId,
         ref: 'Styleset'
-    }
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+      },
+      userName: String,
+      userAvatar: String
 }, {
     timestamps: true
 })

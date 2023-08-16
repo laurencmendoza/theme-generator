@@ -1,20 +1,21 @@
 var express = require('express');
 var router = express.Router();
 const themesCtrl = require('../controllers/themes');
+const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 /* GET themes listing. */
 router.get('/', themesCtrl.index);
 
 // GET new page
-router.get('/new', themesCtrl.new);
+router.get('/new', ensureLoggedIn, themesCtrl.new);
 
 // GET themes detail page
 router.get('/:id', themesCtrl.show);
 
 // POST a new theme to index
-router.post('/', themesCtrl.create);
+router.post('/', ensureLoggedIn, themesCtrl.create);
 
 // DELETE a theme
-router.delete('/:id', themesCtrl.delete);
+router.delete('/:id', ensureLoggedIn, themesCtrl.delete);
 
 module.exports = router;

@@ -15,7 +15,7 @@ async function createStyleset(req, res) {
         const themes = await Theme.findById(req.params.id)
         const openAIResponse = await openAI.sendRequest(`Theme: ${themes.theme}. Theme description: ${themes.description} Respond with a JSON-like answer with keys fontColor, googleFontHref, googleFontFamily, and mainBackgroundColor on what font color rgba, public Google font href, Google font family in CSS format, and background color rgba could be used for this theme respectively`)
         const stylesetData = {...openAIResponse}
-        console.log(stylesetData)
+        // console.log(stylesetData)
         stylesetData.theme = req.params.id
         stylesetData.user = req.user._id;
         stylesetData.userName = req.user.name;
@@ -48,13 +48,12 @@ async function applyStyleset(req,res) {
 }
 
 async function deleteStyleset(req, res) {
-    await Styleset.deleteOne({_id: req.params.ssid})
-    .then(function() {
+    try {
+        await Styleset.deleteOne({_id: req.params.ssid})
         res.redirect(`/themes/${req.params.tid}`)
-    })
-    .catch(function(){
-        console.log(err)
-    })
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 async function updateStyleset(req, res) {
