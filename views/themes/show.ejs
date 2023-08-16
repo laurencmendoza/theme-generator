@@ -14,7 +14,15 @@
          background-color: <%= themes.currentStyle.mainBackgroundColor %> !important;
          color: <%= themes.currentStyle.fontColor %> !important;
          font-family: <%- themes.currentStyle.googleFontFamily %> !important;
-
+         .menu {
+                background-color: <%= themes.currentStyle.menuBackgroundColor %> !important;
+        }
+        .tableHeader {
+                background-color: <%= themes.currentStyle.tableHeaderColor %> !important;
+        }
+        .apply-button, .generate-button {
+            background-color: <%= themes.currentStyle.buttonColor %> !important;
+        }
         <% } else { %>
          background-color: <%= defaultTheme.mainbBackgroundColor %> !important;
          color: <%= defaultTheme.fontColor %> !important;
