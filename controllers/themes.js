@@ -14,7 +14,7 @@ module.exports = {
 
 async function index(req, res) {
     try {
-        const themes = await Theme.find({});
+        const themes = await Theme.find({}).sort('theme');
         res.render('themes/index', {title: "Theme List", themes})
         
     } catch (err) {
