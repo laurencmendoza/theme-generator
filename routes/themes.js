@@ -17,4 +17,7 @@ router.post('/', themesCtrl.create);
 // DELETE a theme
 router.delete('/:id', themesCtrl.delete);
 
+// UPDATE a theme with currentStyle property
+router.put('/:id', themesCtrl.update);
+
 module.exports = router;

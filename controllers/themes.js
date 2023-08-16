@@ -7,7 +7,8 @@ module.exports = {
     new: newTheme, 
     create, 
     delete: deleteTheme, 
-    show
+    show, 
+    update: updateCurrentStyleset
 }
 
 function index(req, res) {
@@ -57,6 +58,21 @@ async function show(req, res) {
     }
     // res.send(openAIResponse)
 }
+
+async function updateCurrentStyleset(req, res) {
+    try {
+        const currentStylesetId = req.body.stylesetId
+        const themes = await Theme.findById(req.params.id)
+        themes.currentStyle = currentStylesetId
+        await themes.save()
+        // console.log("this is the req.body" + currentStyleset)
+        res.redirect(`/themes/${req.params.id}`)
+    } catch(err) {
+        res.render('themes/show', {errorMsg: err.message})
+    }
+}
+
+
 
 // fontColor: {
 //     type: String
