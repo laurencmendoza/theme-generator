@@ -11,5 +11,4 @@ router.delete('/themes/:tid/stylesets/:ssid', stylesetsCtrl.delete);
 // update a styleset
 router.put('/themes/:tid/stylesets/:ssid', stylesetsCtrl.update);
 
-
 module.exports = router;
