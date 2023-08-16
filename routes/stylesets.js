@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const stylesetsCtrl = require('../controllers/stylesets');
 
+// create a styleset
 router.post('/themes/:id/stylesets', stylesetsCtrl.create);
 
 // delete a styleset

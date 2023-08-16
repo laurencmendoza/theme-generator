@@ -12,7 +12,6 @@ module.exports = {
 }
 
 function index(req, res) {
-    // res.render('themes/index', {title: 'Theme List', errorMsg: ''})
     Theme.find({})
     .then(results=>res.render('themes/index', {title: "Theme List", themes: results}))
     .catch(err=>res.send(err))
@@ -56,30 +55,17 @@ async function show(req, res) {
     } catch(err) {
         res.render('themes/show', {errorMsg: err.message})
     }
-    // res.send(openAIResponse)
 }
 
+// adds applied style sent from show.ejs form to currentStyle property of the theme
 async function updateCurrentStyleset(req, res) {
     try {
         const currentStylesetId = req.body.stylesetId
         const themes = await Theme.findById(req.params.id)
         themes.currentStyle = currentStylesetId
         await themes.save()
-        // console.log("this is the req.body" + currentStyleset)
         res.redirect(`/themes/${req.params.id}`)
     } catch(err) {
         res.render('themes/show', {errorMsg: err.message})
     }
 }
-
-
-
-// fontColor: {
-//     type: String
-// }, 
-// googleFontFamily: {
-//     type: String
-// }, 
-// mainBackgroundColor: {
-//     type: String
-// }
