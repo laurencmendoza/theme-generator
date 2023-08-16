@@ -8,20 +8,18 @@
 body {
     <% if (stylesets.currentStyle) { %>
 
-    <% } else { %>
-     background-color: <%= defaultTheme.backgroundColor %> !important;
-     color: <%= defaultTheme.fontColor %> !important;
-     font-family: <%- defaultTheme.googleFont %> !important;
-    <% } %>
-} 
-    /* font-family: 'Roboto Mono', monospace !important; */
+        <% } else { %>
+         background-color: <%= defaultTheme.backgroundColor %> !important;
+         color: <%= defaultTheme.fontColor %> !important;
+         font-family: <%- defaultTheme.googleFont %> !important;
+        <% } %>
+    } 
 
 </style>
 
 <div class="header">
     <h1>Theme Details</h1><br>
 </div>
-
 
 <ul class="description">
     <li>Theme: <%= themes.theme %></li>
@@ -48,8 +46,16 @@ body {
 <% if (user) { %>
 <form action="/themes/<%=themes._id%>/stylesets" class="generate-style" method="POST">
 <button class="generate-button" type="submit">Generate Style</button>
-
 </form><br>
+
+<!-- Loading GIF  -->
+<div class="loading" style="display: none;">
+</div>
+<script>
+    document.querySelector('.generate-button').addEventListener('click', function() {
+        document.querySelector('.loading').style.display = 'block';
+    });
+</script>
 <% } %>
 
 
@@ -83,7 +89,7 @@ body {
                 <td>
                     <% if (user?._id.equals(styleset.user)) { %>
                     <form action="/themes/<%=themes._id%>/stylesets/<%=styleset._id%>?_method=PUT" method="POST">
-                    <button class="update-button" type="submit" value="<%= styleset._id%>"> 🔄 </button></td>
+                    <button class="update-button" type="submit" value="<%= styleset._id%>"> ↺ </button></td>
                     </form>
                     <% } %>
                 <td>

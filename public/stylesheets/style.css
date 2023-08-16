@@ -8,7 +8,6 @@ body {
 }
 
 a {
-  background-color: rgb(184, 204, 255);
   transition: .3s;
   text-align: center;
 }
@@ -17,7 +16,7 @@ a {
   text-align: center !important;
   background-color: rgb(128, 128, 128);
   color: rgb(255, 255, 255);
-  font-weight: bold;
+  font-weight: bold;  
 }
 
 .description li {
@@ -26,7 +25,7 @@ a {
 
 .apply-button {
   margin: 10px;
-  width: 110px;
+  width: 150px;
   height: 35px;
   border-radius: 10px;
   border: 1px solid rgb(99, 99, 99);
@@ -39,9 +38,10 @@ a {
   color: rgb(255, 255, 255);
 } 
 
+
 .generate-button {
   margin: 10px;
-  width: 150px;
+  width: 170px;
   height: 35px;
   border-radius: 10px;
   border: 1px solid rgb(99, 99, 99);
@@ -52,9 +52,26 @@ a {
 .generate-button:hover {
   background-color:rgb(128, 128, 128);
   color: rgb(255, 255, 255);
-
 } 
-  
+
+.loading {
+  width: 100px;
+  height: 100px;
+  border: 20px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #7983ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .menu {
   background-color: rgb(128, 128, 128);
 }
@@ -62,12 +79,13 @@ a {
 .menu p {
   text-decoration: none;
   color: rgb(255, 255, 255);
-  padding: 17px 12px 17px 12px;
+  padding: 15px 12px 15px 12px;
   margin-bottom: 15px;
   font-size: 25px;
   width: 100%;
   background-color: transparent;
 }
+
 .menu p:hover {
   text-decoration: none;
   background-color: rgb(255, 255, 255);
@@ -75,7 +93,7 @@ a {
   font-weight: 700;
   margin-left: 10px;
   transition: 0.5s;
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px;
 }
 
 .menu a:hover {
@@ -99,26 +117,40 @@ th, td {
 }
 
 .new-form {
-    display: block;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    font-size: 20px;
-    margin-left: -50px;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+}
+
+.new-input {
+  text-align: left;
+  font-weight: bold;
 }
 
 .new-button {
-  font-size: 18px;
-  margin-left: 70px;
+  margin: 10px;
+  width: 150px;
+  height: 35px;
+  border-radius: 10px;
+  border: 1px solid rgb(99, 99, 99);
+  background-color: rgba(162, 162, 162, 0.288);
+  font-weight: bold;
 }
+
+.new-button:hover {
+  background-color:rgb(128, 128, 128);
+  color: rgb(255, 255, 255);
+} 
 
 .delete-button {
   background-color: rgb(249, 66, 66);
   color: rgb(255, 255, 255);
   border: none;
   padding: 2px;
-  width: 27px;
-  height: 27px;
+  width: 25px;
+  height: 25px;
   border-radius: 5px;
 }
 
@@ -135,8 +167,18 @@ authentication
   height: 17px;
 }
 
+.nav-auth {
+  display: fixed;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  margin-left: 38px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
 .login img {
-  height: 17px;
+  height: 20px;
 }
 
 .styleset-user, .theme-user {
