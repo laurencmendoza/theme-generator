@@ -27,13 +27,12 @@ async function createStyleset(req, res) {
 }
 
 async function deleteStyleset(req, res) {
-    await Styleset.deleteOne({_id: req.params.ssid})
-    .then(function() {
+    try {
+        await Styleset.deleteOne({_id: req.params.ssid})
         res.redirect(`/themes/${req.params.tid}`)
-    })
-    .catch(function(){
-        console.log(err)
-    })
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 async function updateStyleset(req, res) {

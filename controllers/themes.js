@@ -11,10 +11,16 @@ module.exports = {
     update: updateCurrentStyleset
 }
 
-function index(req, res) {
-    Theme.find({})
-    .then(results=>res.render('themes/index', {title: "Theme List", themes: results}))
-    .catch(err=>res.send(err))
+
+async function index(req, res) {
+    try {
+        const themes = await Theme.find({});
+        res.render('themes/index', {title: "Theme List", themes})
+        
+    } catch (err) {
+        res.render("themes/index", {errorMsg: err.message});
+    }
+
 }
 
 function newTheme(req, res) {
@@ -23,6 +29,9 @@ function newTheme(req, res) {
 
 async function create(req, res) {
     const themeData = {...req.body}
+    themeData.user = req.user._id;
+    themeData.userName = req.user.name;
+    themeData.userAvatar = req.user.avatar;
     try {
         const createdTheme = await Theme.create(themeData)
         res.redirect("/themes/");
@@ -32,13 +41,12 @@ async function create(req, res) {
 }
 
 async function deleteTheme(req, res) {
-    await Theme.deleteOne({_id: req.params.id})
-    .then(function() {
-        res.redirect('/themes/')
-    })
-    .catch(function(){
-        console.log(err)
-    })
+    try {
+        await Theme.deleteOne({_id: req.params.id});
+        res.redirect('/themes');
+    } catch (err) {
+        console.log(err, err);
+      }
 }
 
 async function show(req, res) {

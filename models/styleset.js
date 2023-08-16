@@ -24,8 +24,8 @@ const stylesetSchema = new Schema({
         ref: 'User',
         required: true
       },
-      userName: String,
-      userAvatar: String
+    userName: String,
+    userAvatar: String
 }, {
     timestamps: true
 } )

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const defaultTheme = JSON.stringify({fontColor: "rgb(0,0,255)", googleFont: "'Roboto Mono', monospace", backgroundColor: "rgb(255,0,0)"})
+const defaultTheme = JSON.stringify({fontColor: "rgb(0,0,0)", googleFont: "'Roboto Mono', monospace", backgroundColor: "rgb(255,255,255)"})
 
 const Schema = mongoose.Schema
 
@@ -16,10 +16,18 @@ const themeSchema = new Schema({
         type: String,
         default: defaultTheme 
     },
+
     currentStyle: {
         type: Schema.Types.ObjectId,
         ref: 'Styleset'
-    }
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+      },
+      userName: String,
+      userAvatar: String
 }, {
     timestamps: true
 })

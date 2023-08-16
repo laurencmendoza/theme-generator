@@ -7,26 +7,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 
 <style>
+
     <% const defaultTheme = JSON.parse(themes.defaultStyle) %>
     body {
         <% if (themes.currentStyle) { %>
          background-color: <%= themes.currentStyle.mainBackgroundColor %> !important;
          color: <%= themes.currentStyle.fontColor %> !important;
          font-family: <%- themes.currentStyle.googleFontFamily %> !important;
+
         <% } else { %>
          background-color: <%= defaultTheme.backgroundColor %> !important;
          color: <%= defaultTheme.fontColor %> !important;
          font-family: <%- defaultTheme.googleFont %> !important;
         <% } %>
     } 
-    /* font-family: 'Roboto Mono', monospace !important; */
 
 </style>
 
 <div class="header">
     <h1>Theme Details</h1><br>
 </div>
-
 
 <ul class="description">
     <li>Theme: <%= themes.theme %></li>
@@ -51,8 +51,16 @@
 <% if (user) { %>
 <form action="/themes/<%=themes._id%>/stylesets" class="generate-style" method="POST">
 <button class="generate-button" type="submit">Generate Style</button>
-
 </form><br>
+
+<!-- Loading GIF  -->
+<div class="loading" style="display: none;">
+</div>
+<script>
+    document.querySelector('.generate-button').addEventListener('click', function() {
+        document.querySelector('.loading').style.display = 'block';
+    });
+</script>
 <% } %>
 
 
@@ -73,7 +81,7 @@
     <tbody>
         <% stylesets.forEach((styleset, index) => { %>
             <tr>
-                <td class="review-user"><img alt="avatar" src="<%= styleset.userAvatar %>" referrerpolicy="no-referrer" >&nbsp;&nbsp;<%= styleset.userName %></td>
+                <td class="styleset-user"><img alt="avatar" src="<%= styleset.userAvatar %>" referrerpolicy="no-referrer" >&nbsp;&nbsp;<%= styleset.userName %></td>
                 <td><%= index + 1 %></td>
                 <td><%= styleset.fontColor %></td>
                 <td>
@@ -84,13 +92,17 @@
                 </td>
                 <td><%= styleset.mainBackgroundColor %></td>
                 <td>
+                    <% if (user?._id.equals(styleset.user)) { %>
                     <form action="/themes/<%=themes._id%>/stylesets/<%=styleset._id%>?_method=PUT" method="POST">
-                    <button class="update-button" type="submit" value="<%= styleset._id%>"> 🔄 </button></td>
+                    <button class="update-button" type="submit" value="<%= styleset._id%>"> ↺ </button></td>
                     </form>
+                    <% } %>
                 <td>
+                    <% if (user?._id.equals(styleset.user)) { %>
                     <form action="/themes/<%=themes._id%>/stylesets/<%=styleset._id%>?_method=DELETE" method="POST">
                     <button class="delete-button" type="submit">X</button>
                     </form>
+                    <% } %>
                 </td>
             </tr>
         <% }) %>
