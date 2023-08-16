@@ -23,7 +23,9 @@ const stylesetSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
-      }
+      },
+    userName: String,
+    userAvatar: String
 }, {
     timestamps: true
 } )
