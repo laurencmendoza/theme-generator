@@ -1,5 +1,13 @@
 const mongoose = require('mongoose')
-const defaultTheme = JSON.stringify({fontColor: "rgb(0,0,0)", googleFont: "'Roboto Mono', monospace", backgroundColor: "rgb(255,255,255)"})
+const defaultTheme = JSON.stringify({
+    fontColor: "rgb(0,0,0)", 
+    googleFont: "'Roboto Mono', monospace", 
+    backgroundColor: "rgb(240,248,255)",
+    menuBackgroundColor: "rgb(221,160,221)",
+    tableHeaderColor: "rgb(184,201,65)",
+    applyButtonColor: "rgb(255,165,0)",
+    generateButtonColor: "rgb(0,128,0)"
+})
 
 const Schema = mongoose.Schema
 
