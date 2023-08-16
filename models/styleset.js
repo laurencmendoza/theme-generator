@@ -18,6 +18,15 @@ const stylesetSchema = new Schema({
     mainBackgroundColor: {
         type: String
     },
+    menuBackgroundColor: {
+        type: String
+    },
+    tableHeaderColor: {
+        type: String
+    },
+    buttonColor: {  
+        type: String
+    },
     // Do not change user, userName and userAvatar propeeties. They are required when using Google OAuth
     user: {
         type: Schema.Types.ObjectId,
