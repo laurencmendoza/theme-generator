@@ -17,12 +17,13 @@
         <div class="menu" style="width: 180px; height: 100vh;">
             <br><br>
             <a href="/"><p>Home</p></a> 
-            <a href="/themes"><p>All Themes</p></a> 
-            <% if (user) { %> 
+            <a href="/themes"><p>All Themes</p></a>
+           
+        <% if (user) { %> 
             <a href="/themes/new"><p>Add Theme</p></a>
-            <a href="/logout">LOG OUT</a>
+            <br><a href="/logout" class="nav-auth">LOG OUT</a>
                 <% } else { %>
-                <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+            <br><a href="/auth/google" class="login nav-auth"><img src="https://i.imgur.com/FHjYyi0.png">&nbsp; LOG IN</a>
                 <% } %>
         </div>
         <div class="col">
