@@ -1,7 +1,7 @@
 const Theme = require('../models/theme')
 const Styleset = require('../models/styleset')
 const openAI = require('../config/openai')
-const textRemainderForOpenAIRequest = `Respond with a JSON-like answer with keys fontColor, googleFontHref, googleFontFamily, mainBackgroundColor, menuBackgroundColor, tableHeaderColor and buttonColor on what font color rgba, public Google font href, Google font family in CSS format, background color rgba, navigation background color rgba, table header color rgba, and button color rgba could be used for this theme respectively. The mainBackgroundColor should have high color contrast compared to other color suggestions, and manuBackgroundColor should have high color contrast from white.`;
+const textRemainderForOpenAIRequest = `Respond with a JSON-like answer with keys fontColor, googleFontHref, googleFontFamily, mainBackgroundColor, menuBackgroundColor, tableHeaderColor and buttonColor on what font color rgba, public Google font href, Google font family in CSS format, background color rgba, navigation background color rgba, table header color rgba, and button color rgba could be used for this theme respectively. The suggested colors should have high contrast to each other, and menuBackgroundColor should have high color contrast from white.`;
 
 module.exports = {
     create: createStyleset, 
