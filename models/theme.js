@@ -16,6 +16,7 @@ const themeSchema = new Schema({
         type: String,
         default: defaultTheme 
     },
+
     currentStyle: {
         type: Schema.Types.ObjectId,
         ref: 'Styleset'
