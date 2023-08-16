@@ -1,12 +1,19 @@
 <%- include('../partials/header') %>
 
+<% if (themes.currentStyle) { %>
+<link href=<%- themes.currentStyle.googleFontHref %> rel="stylesheet">
+<% } %>
+
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 
 <style>
- <% const defaultTheme = JSON.parse(themes.defaultStyle) %>
-<% console.log(defaultTheme); %>
-body {
-    <% if (stylesets.currentStyle) { %>
+
+    <% const defaultTheme = JSON.parse(themes.defaultStyle) %>
+    body {
+        <% if (themes.currentStyle) { %>
+         background-color: <%= themes.currentStyle.mainBackgroundColor %> !important;
+         color: <%= themes.currentStyle.fontColor %> !important;
+         font-family: <%- themes.currentStyle.googleFontFamily %> !important;
 
         <% } else { %>
          background-color: <%= defaultTheme.backgroundColor %> !important;
@@ -28,11 +35,9 @@ body {
 <br>
 <div class="row">
     <div class="col" style="padding: 25px">
-<% stylesets.forEach((styleset, index) => { %>
-<form action="/stylesets/<%=styleset._id%>?_method=PUT" method="POST">
-    <% }) %>
+<form action="/themes/<%=themes._id%>?_method=PUT" method="POST">
     <label> Select Style :   
-        <select name="styleset">
+        <select name="stylesetId">
             <% stylesets.forEach((styleset, index) => { %>
             <option value="<%=styleset._id%>"> Style ID # <%=index +1%></option>
         <% }) %>

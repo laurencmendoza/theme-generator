@@ -3,9 +3,6 @@ var router = express.Router();
 const stylesetsCtrl = require('../controllers/stylesets');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
-// apply default styleset
-router.put('/stylesets/:id', ensureLoggedIn, stylesetsCtrl.apply);
-
 // create (generate) a styleset
 router.post('/themes/:id/stylesets', ensureLoggedIn, stylesetsCtrl.create);
 

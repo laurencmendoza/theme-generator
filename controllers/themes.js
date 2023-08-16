@@ -7,8 +7,10 @@ module.exports = {
     new: newTheme, 
     create, 
     delete: deleteTheme, 
-    show
+    show, 
+    update: updateCurrentStyleset
 }
+
 
 async function index(req, res) {
     try {
@@ -18,6 +20,7 @@ async function index(req, res) {
     } catch (err) {
         res.render("themes/index", {errorMsg: err.message});
     }
+
 }
 
 function newTheme(req, res) {
@@ -60,15 +63,17 @@ async function show(req, res) {
     } catch(err) {
         res.render('themes/show', {errorMsg: err.message})
     }
-    // res.send(openAIResponse)
 }
 
-// fontColor: {
-//     type: String
-// }, 
-// googleFontFamily: {
-//     type: String
-// }, 
-// mainBackgroundColor: {
-//     type: String
-// }
+// adds applied style sent from show.ejs form to currentStyle property of the theme
+async function updateCurrentStyleset(req, res) {
+    try {
+        const currentStylesetId = req.body.stylesetId
+        const themes = await Theme.findById(req.params.id)
+        themes.currentStyle = currentStylesetId
+        await themes.save()
+        res.redirect(`/themes/${req.params.id}`)
+    } catch(err) {
+        res.render('themes/show', {errorMsg: err.message})
+    }
+}
