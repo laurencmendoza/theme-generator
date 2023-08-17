@@ -62,7 +62,6 @@
             <option value="">Default</option>
             <% stylesets.forEach((styleset, index) => { %>
             <% if (themes.currentStyle && themes.currentStyle.equals(styleset)) { %>
-                <% console.log("applied style " + themes.currentStyle+ "styleset " + styleset)%>
                 <option value="<%=themes.currentStyle._id%>" selected> Style ID # <%=index +1%></option>
             <% } else { %>
                 <option value="<%=styleset._id%>"> Style ID # <%=index +1%></option>
@@ -94,6 +93,7 @@
 <table class="table">
     <thead>
     <tr>
+        <th class="tableHeader"></th>
         <th class="tableHeader">User</th>
         <th class="tableHeader">Style ID #</th>
         <th class="tableHeader">Font Color</th>
@@ -110,16 +110,48 @@
     </thead>
 
     <tbody>
+        <!-- Bring default styleset to the top of the table -->
+        <% let indexI = -1 %>
+        <% let defaultStylesetIndex = -1 %>
+        <% stylesets.forEach((styleset)=>{ %>
+            <% indexI++ %>
+            <% styleset.styleID = indexI+1 %>
+            <% if (themes.currentStyle && themes.currentStyle.equals(styleset)) { %>
+                <% defaultStylesetIndex = indexI %>
+                <% themes.currentStyle.styleID = indexI + 1 %>
+                <% } %>
+        <% }) %>
+        <% if (defaultStylesetIndex !== -1) { %>
+            <%stylesets.splice(defaultStylesetIndex, 1);%>
+            <%stylesets.unshift(themes.currentStyle);%>
+         <%}%>
+
         <% stylesets.forEach((styleset, index) => { %>
             <tr>
+                <% if (themes.currentStyle && themes.currentStyle.equals(styleset)) { %>
+                    <td>Applied Style</td>
+                <% } else {%>
+                    <td></td>
+                <% } %>
                 <td class="styleset-user"><img alt="avatar" src="<%= styleset.userAvatar %>" referrerpolicy="no-referrer" >&nbsp;&nbsp;<%= styleset.userName %></td>
-                <td><%= index + 1 %></td>
+                <td><%= styleset.styleID %></td>
                 <td><%= styleset.fontColor %></td>
-                <td>
-                    <%= styleset.googleFontFamily %>&nbsp;
-                     <a href="<%= styleset.googleFontHref %>" target="_blank">
-                        <img src="https://i.imgur.com/9lHvVix.png" alt="Link" width="20" height="20">
-                    </a> 
+                <td id="parentElToCreateTempInput">
+                    <span><%= styleset.googleFontFamily %>&nbsp;</span>
+                    <img id="copyIcon<%=index+1%>" class="hover-effect" src="https://i.imgur.com/9lHvVix.png" alt="Link" width="20" height="20">
+                    <script>
+                        const copyIcon<%=index+1%> = document.getElementById("copyIcon<%=index+1%>")
+                        copyIcon<%=index+1%>.addEventListener("click", function() {
+                        const tempInput = document.createElement("input")
+                        const parentElToCreateTempInput = document.getElementById("parentElToCreateTempInput")
+                        tempInput.value = "<%=styleset.googleFontHref%>"
+                        parentElToCreateTempInput.appendChild(tempInput) 
+                        tempInput.select(); 
+                        tempInput.setSelectionRange(0, 99999);
+                        navigator.clipboard.writeText(tempInput.value);
+                        parentElToCreateTempInput.removeChild(tempInput);
+                        });
+                    </script>
                 </td>
                 <td><%= styleset.mainBackgroundColor %></td>
                 <td><%= styleset.menuBackgroundColor %></td>
@@ -130,7 +162,9 @@
                 <td>
                     <% if (user?._id.equals(styleset.user)) { %>
                     <form action="/themes/<%=themes._id%>/stylesets/<%=styleset._id%>?_method=PUT" method="POST">
-                    <button class="update-button" type="submit" value="<%= styleset._id%>"> ↺ </button>
+
+                    <button id="hover-effect-update" class="update-button" type="submit" value="<%= styleset._id %>"> ↺ </button></td>
+
                     </form>
                     <script>
                         document.querySelector('.update-button').addEventListener('click', function() {
@@ -142,7 +176,9 @@
                 <td> 
                     <% if (user?._id.equals(styleset.user)) { %>
                     <form action="/themes/<%=themes._id%>/stylesets/<%=styleset._id%>?_method=DELETE" method="POST">
-                    <button class="delete-button" type="submit">X</button>
+                    <button id="hover-effect-delete" class="delete-button" type="submit">X</button>
+                    </form>
+
                     <% } %>
                 </td>
 
