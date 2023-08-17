@@ -6,7 +6,7 @@ const defaultTheme = JSON.stringify({
     menuBackgroundColor: "rgb(221,160,221)",
     tableHeaderColor: "rgb(184,201,65)",
     buttonColor: "rgb(255,165,0)",
-
+    buttonHoverColor: "rgb(255, 255, 0)"
 })
 
 const Schema = mongoose.Schema

@@ -67,6 +67,9 @@ async function show(req, res) {
 
 // adds applied style sent from show.ejs form to currentStyle property of the theme
 async function updateCurrentStyleset(req, res) {
+    for (let key in req.body) {
+        if (req.body[key] === '') delete req.body[key];
+    }
     try {
         const currentStylesetId = req.body.stylesetId
         const themes = await Theme.findById(req.params.id)
