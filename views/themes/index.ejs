@@ -19,13 +19,13 @@
             <tbody>
               <% themes.forEach(function(t) { %>
                  <tr>
-                    <td class="theme-user" style="vertical-align: middle;"><img alt="avatar" src="<%= t.userAvatar %>" referrerpolicy="no-referrer" >&nbsp;&nbsp;<%= t.userName %></td>
+                    <td class="theme-user" style="vertical-align: middle;"><img alt="avatar" src="<%= t.user.avatar %>" referrerpolicy="no-referrer" >&nbsp;&nbsp;<%= t.user.name %></td>
                     <td> <%= t.theme %> </td>
                     <td> <%= t.description %> </td>
                     <td>
                         <a href="/themes/<%= t._id %>">DETAILS</a></td>
                     <td> 
-                        <% if (user?._id.equals(t.user)) { %>
+                        <% if (user?._id.equals(t.user._id)) { %>
                             <form action="/themes/<%= t._id %>?_method=DELETE" class="delete-form" method="POST">
                                 <button class="delete-button" type="submit">X</button>
                             </form>

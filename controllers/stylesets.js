@@ -1,6 +1,6 @@
-const Theme = require('../models/theme')
-const Styleset = require('../models/styleset')
-const openAI = require('../config/openai')
+const Theme = require("../models/theme");
+const Styleset = require("../models/styleset");
+const openAI = require("../config/openai");
 const textRemainderForOpenAIRequest = `Provide a JSON-style response containing keys for fontColor, googleFontHref, googleFontFamily, mainBackgroundColor, menuBackgroundColor, tableHeaderColor, buttonColor, and buttonHoverColor. I'm looking for suggestions on rgba values for font color, public Google font href, Google font family in CSS format, and rgba values for various theme elements. Ensure the following color contrast principles for improved visibility and variety:
 
 1. menuBackgroundColor and tableHeaderColor should distinctly contrast with white, and the colors should be distinct from each other.
@@ -12,51 +12,47 @@ The goal is to have a harmonious yet diverse color palette that ensures readabil
 `;
 
 module.exports = {
-    create: createStyleset, 
-    delete: deleteStyleset, 
-    update: updateStyleset
-}
-
+  create: createStyleset,
+  delete: deleteStyleset,
+  update: updateStyleset,
+};
 
 async function createStyleset(req, res) {
-    try {
-        const themes = await Theme.findById(req.params.id)
-        const openAIResponse = await openAI.sendRequest(`Theme: ${themes.theme}. Theme description: ${themes.description}. ${textRemainderForOpenAIRequest}`);
-        const stylesetData = {...openAIResponse}
-        // console.log(stylesetData)
-        stylesetData.theme = req.params.id
-        stylesetData.user = req.user._id;
-        stylesetData.userName = req.user.name;
-        stylesetData.userAvatar = req.user.avatar;
-        await Styleset.create(stylesetData)
-        res.redirect(`/themes/${req.params.id}`)
-    } catch (err) {
-        console.log(err)
-    }
+  try {
+    const themes = await Theme.findById(req.params.id);
+    const openAIResponse = await openAI.sendRequest(
+      `Theme: ${themes.theme}. Theme description: ${themes.description}. ${textRemainderForOpenAIRequest}`
+    );
+    const stylesetData = { ...openAIResponse };
+    stylesetData.theme = req.params.id;
+    stylesetData.user = req.user._id;
+    await Styleset.create(stylesetData);
+    res.redirect(`/themes/${req.params.id}`);
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 async function deleteStyleset(req, res) {
-    try {
-        await Styleset.deleteOne({_id: req.params.ssid})
-        res.redirect(`/themes/${req.params.tid}`)
-    } catch (err) {
-        console.log(err);
-    }
+  try {
+    await Styleset.deleteOne({ _id: req.params.ssid });
+    res.redirect(`/themes/${req.params.tid}`);
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 async function updateStyleset(req, res) {
-    try {
-        const themes = await Theme.findById(req.params.tid)
-        const openAIResponse = await openAI.sendRequest(`Theme: ${themes.theme}. Theme description: ${themes.description}. ${textRemainderForOpenAIRequest}`)
-        const stylesetData = {...openAIResponse}
-        // stylesetData.theme = req.params.tid
-        stylesetData.user = req.user._id;
-        stylesetData.userName = req.user.name;
-        stylesetData.userAvatar = req.user.avatar;
-        // await Styleset.create(stylesetData)
-        await Styleset.findOneAndUpdate({_id: req.params.ssid}, stylesetData)
-        res.redirect(`/themes/${req.params.tid}`)
-    } catch (err) {
-        console.log(err)
-    }
+  try {
+    const themes = await Theme.findById(req.params.tid);
+    const openAIResponse = await openAI.sendRequest(
+      `Theme: ${themes.theme}. Theme description: ${themes.description}. ${textRemainderForOpenAIRequest}`
+    );
+    const stylesetData = { ...openAIResponse };
+    stylesetData.user = req.user._id;
+    await Styleset.findOneAndUpdate({ _id: req.params.ssid }, stylesetData);
+    res.redirect(`/themes/${req.params.tid}`);
+  } catch (err) {
+    console.log(err);
+  }
 }

@@ -1,45 +1,45 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-const stylesetSchema = new Schema({
+const stylesetSchema = new Schema(
+  {
     theme: {
-        type: Schema.Types.ObjectId, 
-        ref: 'Theme'
-    }, 
+      type: Schema.Types.ObjectId,
+      ref: "Theme",
+    },
     fontColor: {
-        type: String
-    }, 
+      type: String,
+    },
     googleFontHref: {
-        type: String
+      type: String,
     },
     googleFontFamily: {
-        type: String
-    }, 
+      type: String,
+    },
     mainBackgroundColor: {
-        type: String
+      type: String,
     },
     menuBackgroundColor: {
-        type: String
+      type: String,
     },
     tableHeaderColor: {
-        type: String
+      type: String,
     },
-    buttonColor: {  
-        type: String
+    buttonColor: {
+      type: String,
     },
     buttonHoverColor: {
-        type: String
+      type: String,
     },
-    // Do not change user, userName and userAvatar propeeties. They are required when using Google OAuth
     user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
-      },
-    userName: String,
-    userAvatar: String
-}, {
-    timestamps: true
-} )
+      type: Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
-module.exports = mongoose.model('Styleset', stylesetSchema)
+module.exports = mongoose.model("Styleset", stylesetSchema);
