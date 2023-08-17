@@ -60,7 +60,6 @@
         <select name="stylesetId">
             <% stylesets.forEach((styleset, index) => { %>
             <% if (themes.currentStyle && themes.currentStyle.equals(styleset)) { %>
-                <% console.log("applied style " + themes.currentStyle+ "styleset " + styleset)%>
                 <option value="<%=themes.currentStyle._id%>" selected> Style ID # <%=index +1%></option>
             <% } else { %>
             <option value="<%=styleset._id%>"> Style ID # <%=index +1%></option>
@@ -92,6 +91,7 @@
 <table class="table">
     <thead>
     <tr>
+        <th class="tableHeader"></th>
         <th class="tableHeader">User</th>
         <th class="tableHeader">Style ID #</th>
         <th class="tableHeader">Font Color</th>
@@ -107,10 +107,31 @@
     </thead>
 
     <tbody>
+        <!-- Bring default styleset to the top of the table -->
+        <% let indexI = -1 %>
+        <% let defaultStylesetIndex = -1 %>
+        <% stylesets.forEach((styleset)=>{ %>
+            <% indexI++ %>
+            <% styleset.styleID = indexI+1 %>
+            <% if (themes.currentStyle && themes.currentStyle.equals(styleset)) { %>
+                <% defaultStylesetIndex = indexI %>
+                <% themes.currentStyle.styleID = indexI + 1 %>
+                <% } %>
+        <% }) %>
+        <% if (defaultStylesetIndex !== -1) { %>
+            <%stylesets.splice(defaultStylesetIndex, 1);%>
+            <%stylesets.unshift(themes.currentStyle);%>
+         <%}%>
+
         <% stylesets.forEach((styleset, index) => { %>
             <tr>
+                <% if (themes.currentStyle && themes.currentStyle.equals(styleset)) { %>
+                    <td>Default Style</td>
+                <% } else {%>
+                    <td></td>
+                <% } %>
                 <td class="styleset-user"><img alt="avatar" src="<%= styleset.userAvatar %>" referrerpolicy="no-referrer" >&nbsp;&nbsp;<%= styleset.userName %></td>
-                <td><%= index + 1 %></td>
+                <td><%= styleset.styleID %></td>
                 <td><%= styleset.fontColor %></td>
                 <td id="parentElToCreateTempInput">
                     <span><%= styleset.googleFontFamily %>&nbsp;</span>
@@ -127,7 +148,7 @@
                         navigator.clipboard.writeText(tempInput.value);
                         parentElToCreateTempInput.removeChild(tempInput);
                         });
-                        </script>
+                    </script>
                 </td>
                 <td><%= styleset.mainBackgroundColor %></td>
                 <td><%= styleset.menuBackgroundColor %></td>
