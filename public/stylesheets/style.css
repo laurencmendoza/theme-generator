@@ -201,8 +201,7 @@ th, td {
 .delete-button {
   background-color: rgb(249, 66, 66);
   color: rgb(255, 255, 255);
-  border: none;
-  padding: 2px;
+  border: none;s
   width: 25px;
   height: 25px;
   border-radius: 5px;
@@ -211,9 +210,8 @@ th, td {
 .update-button {
   border: none;
   font-size: 18px;
-  padding: 2px;
-  width: 25px;
-  height: 25px;
+  width: 26px;
+  height: 27px;
   border-radius: 5px;
 }
 
