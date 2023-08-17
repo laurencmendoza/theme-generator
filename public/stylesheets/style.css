@@ -12,6 +12,12 @@ a {
   text-align: center;
 }
 
+.intro {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+}
+
 .tableHeader {
   text-align: center !important;
   background-color: rgb(128, 128, 128);
