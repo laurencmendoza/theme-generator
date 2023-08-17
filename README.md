@@ -6,15 +6,27 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 # Theme Generator
-Theme Generator is a cutting-edge web application that revolutionizes the way you design and style your web projects. Say goodbye to painstakingly tweaking CSS properties and struggling with design tools.  With just a simple description, Theme Generator offers an expansive array of AI-generated web application styling properties. From fonts to background colors, navigation styles to table decorations, and beyond – the possibilities are limitless. Modify and preview a plethora of styles right on the page, allowing you to effortlessly discover the perfect aesthetic to suit your unique needs.
+Theme Generator is a full-stack, CRUD web application that revolutionizes the way you design and style your web projects. Say goodbye to painstakingly tweaking CSS properties and struggling with design tools.  With just a simple description, Theme Generator offers an expansive array of AI-generated web application styling properties. From fonts to background colors, navigation styles to table decorations, and beyond – the possibilities are limitless. Modify and preview a plethora of styles right on the page, allowing you to effortlessly discover the perfect aesthetic to suit your unique needs.
 
 
 ## Screenshot
+### Home Page
+![Home Screen](https://github.com/laurencmendoza/theme-generator/assets/137251999/b4b0237b-fe96-462e-94a2-02acf77e00e7)
+### Home Page for Logged In User
+![Home Screen Logged In User](https://github.com/laurencmendoza/theme-generator/assets/137251999/09bf312f-a58b-4b08-a414-497c41654793)
+### Add Theme Page
+![Add a Theme Screen](https://github.com/laurencmendoza/theme-generator/assets/137251999/0953065e-e45b-4371-b1d0-ca68819c0d66)
+### Theme Details
+![Theme Details page with default style](https://github.com/laurencmendoza/theme-generator/assets/137251999/2fd71410-742f-42bf-931a-d23450c0f262)
+### Example of Theme Details with Applied Styles
+![Theme Details page for flower shop with applied style](https://github.com/laurencmendoza/theme-generator/assets/137251999/3c94a90b-66be-4c56-ae40-fb5bbf226b7e)  
 
-<img src="url to your image on imgur">
-<img src="url to your image on imgur">
+![Theme Details page for bakery](https://github.com/laurencmendoza/theme-generator/assets/137251999/26833741-a130-450f-8869-7847a7102c8f)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<p align="right">(<a href="#readme-top">back to top)</a></p>
 
 ## Technologies Used
 
