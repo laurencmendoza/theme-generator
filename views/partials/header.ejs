@@ -1,67 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
+    <head>
+        <title><%= title %></title>
 
-    <!-- Bootstrap CSS CDN -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-    <!-- JS libraries -->
-    <script
-      defer
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-    ></script>
-    <script
-      defer
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"
-    ></script>
-    <script
-      defer
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    ></script>
+        <!-- JS libraries -->
+        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
 
-    <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-  </head>
-
-  <body>
+        <!-- Stylesheets -->
+        <link rel='stylesheet' href='/stylesheets/style.css'/>
+    </head>
+    
+<body>
     <div class="row">
-      <div class="menu text-center" style="width: 250px; height: 100vh">
-        <br /><br />
-        <a href="/"><p>Home</p></a>
-        <a href="/themes"><p>All Themes</p></a>
+        <div class="menu text-center" style="width: 250px; height: 100vh;"><br><br>
+            <a href="/"><p>Home</p></a> 
+            <a href="/themes"><p>All Themes</p></a>
+           
+            <% if (user) { %> 
+                <a href="/themes/new"><p>Add Theme</p></a><br>
+                <a href="/logout" class="nav-auth">LOG OUT</a>
+            <% } else { %><br>
+                <a href="/auth/google" class="login nav-auth">
+                    <img src="https://i.imgur.com/FHjYyi0.png">&nbsp; LOG IN
+                </a>
+            <% } %><br><br><br>
 
-        <% if (user) { %>
-        <a href="/themes/new"><p>Add Theme</p></a><br />
-        <a href="/logout" class="nav-auth">LOG OUT</a>
-        <% } else { %><br />
-        <a href="/auth/google" class="login nav-auth">
-          <img src="https://i.imgur.com/FHjYyi0.png" />&nbsp; LOG IN
-        </a>
-        <% } %><br /><br /><br />
-
-        <h2 id="logo">ALELLA</h2>
-      </div>
-      <div class="col"></div>
-    </div>
-  </body>
-</html>
+            <h2 id="logo"> ALELLA </h2>
+        </div>
+        <div class="col">
