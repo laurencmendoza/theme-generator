@@ -21,7 +21,10 @@ h1 {
 #logo {
   font-family: 'Oswald', sans-serif;
   text-align: center;
-  font-size: 50px !important; 
+  font-size: 175px !important; 
+  transform: rotate(-90deg);
+  margin-top: 30vh;
+  margin-right: -40px;
 }
 
 .intro {
@@ -192,7 +195,7 @@ authentication
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   padding: 10px;
-  margin-left: 38px;
+  /* margin-left: 38px; */
   font-weight: bold;
   border-radius: 5px;
 }
