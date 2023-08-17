@@ -1,22 +1,47 @@
 <%- include('../partials/header') %>
 
 <div class="header">
-    <h1>Add Theme</h1><br><br>
+  <h1>Add Theme</h1>
+  <br /><br />
 </div>
 
-
 <div class="row new-form">
-    <form action="/themes" method="POST">
-        <label class="new-input">Theme Name : <br>
-            <input type="text" name="theme" pattern="^.{1,40}$" style= "width: 500px; height: 40px; border-radius: 8px; font-size: 15px !important; font-weight: normal">
-        </label><br><br>
+  <form action="/themes" method="POST">
+    <label class="new-input"
+      >Theme Name : <br />
+      <input
+        type="text"
+        name="theme"
+        pattern="^.{1,40}$"
+        style="
+          width: 500px;
+          height: 40px;
+          border-radius: 8px;
+          font-size: 15px !important;
+          font-weight: normal;
+        "
+      /> </label
+    ><br /><br />
 
-        <label class="new-input"> Description : <br>
-            <textarea name="description" style="width: 500px; height: 150px; border-radius: 10px; font-size: 15px; font-weight: normal; resize: none; border: 2px solid rgb(0, 0, 0)" maxlength="300"></textarea>
-        </label><br><br>
+    <label class="new-input">
+      Description : <br />
+      <textarea
+        name="description"
+        style="
+          width: 500px;
+          height: 150px;
+          border-radius: 10px;
+          font-size: 15px;
+          font-weight: normal;
+          resize: none;
+          border: 2px solid rgb(0, 0, 0);
+        "
+        maxlength="300"
+      ></textarea></label
+    ><br /><br />
 
-        <button class="new-button" type="submit">Add Theme</button>
-    </form>
+    <button class="new-button" type="submit">Add Theme</button>
+  </form>
 </div>
 
 <%- include('../partials/footer') %>
