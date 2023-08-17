@@ -28,33 +28,6 @@ h1 {
   font-size: 18px;
 }
 
-.content-container {
-  display: flex; 
-}
-
-.marquee div {
-  margin: 0;
-  display: block;
-  width: 100%;
-  height: 30px;
-  transform: rotate(-90deg);
-  position: relative;
-  animation: marquee 5s linear infinite;
-}
-
-.marquee span {
-  position: absolute;
-  color: white;
-  font-size: 15px;
-  /* float: left; */
-  width: 540px !important;
-}
-
-@keyframes marquee {
-  0% { bottom: 0; }
-  100% { bottom: -97vh; }
-}
-
 .tableHeader {
   text-align: center !important;
   background-color: rgb(128, 128, 128);
