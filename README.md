@@ -1,3 +1,5 @@
+<a name="readme-top"></a>
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -29,7 +31,7 @@ Theme Generator is a cutting-edge web application that revolutionizes the way yo
 
 # Getting Started
 
-[Click to see the app!](your deployment url here)
+[Click to see the app!](https://alella-theme-generator-49b5c35126f2.herokuapp.com/)
 
 # Next Steps
 
