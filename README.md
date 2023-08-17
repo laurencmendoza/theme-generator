@@ -33,6 +33,13 @@ Theme Generator is a cutting-edge web application that revolutionizes the way yo
 
 [Click to see the app!](https://alella-theme-generator-49b5c35126f2.herokuapp.com/)
 
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 # Next Steps
 
 - Future enhancement one...
