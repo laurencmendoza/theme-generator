@@ -1,3 +1,5 @@
+<a name="readme-top"></a>
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -11,23 +13,52 @@ Theme Generator is a cutting-edge web application that revolutionizes the way yo
 <img src="url to your image on imgur">
 <img src="url to your image on imgur">
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 # Technologies Used
 
 - JavaScript
-- HTML
+- Embedded JavaScript Templating (EJS)
 - CSS
 - MongoDB
+- Mongoose
 - Express
 - Node.js
+- Bootstrap
+- OpenAI
+- Passport
+- Method Override
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # Getting Started
 
-[Click to see the app!](your deployment url here)
+[Click to see the app!](https://alella-theme-generator-49b5c35126f2.herokuapp.com/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+* [How to Build Your Own AI With ChatGPT API from Web Dev Simplified](https://youtu.be/4qNwoAAfnk4)
+* [Documentation on OpenAI](https://platform.openai.com/docs/libraries/node-js-library)
+* [RESTful Routes to CRUD Mapping](https://gist.github.com/jim-clark/17908763db7bd3c403e6#routing-for-nested-resources-onemany--manymany-relationships)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # Next Steps
 
 - Future enhancement one...
 - Future enhancement two...
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 - <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
@@ -58,3 +89,4 @@ Theme Generator is a cutting-edge web application that revolutionizes the way yo
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
+[JavaScript]: https://img.shields.io/badge/logo-javascript-blue?logo=javascript
