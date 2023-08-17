@@ -114,30 +114,20 @@
                 <td><%= styleset.fontColor %></td>
                 <td id="parentElToCreateTempInput">
                     <span><%= styleset.googleFontFamily %>&nbsp;</span>
-                     <!-- const tempInput = document.createElement("input") 
-                     const parentElToCreateTempInput = document.getElementById("parentElToCreateTempInput") 
-                     tempInput.value = styleset.googleFontHref
-                     parentElToCreateTempInput.appendChild(tempInput) 
-                     tempInput.select(); 
-                     tempInput.setSelectionRange(0, 99999);  -->
-                    
-
-                     <!-- <a href=" styleset.googleFontHref " target="_blank"> -->
-                        <img id="copyIcon<%=index+1%>" class="hover-effect" src="https://i.imgur.com/9lHvVix.png" alt="Link" width="20" height="20">
-                        <script>
-                            const copyIcon<%=index+1%> = document.getElementById("copyIcon<%=index+1%>")
-                            copyIcon<%=index+1%>.addEventListener("click", function() {
-                                const tempInput = document.createElement("input")
-                                const parentElToCreateTempInput = document.getElementById("parentElToCreateTempInput")
-                                tempInput.value = "<%=styleset.googleFontHref%>"
-                                parentElToCreateTempInput.appendChild(tempInput) 
-                                tempInput.select(); 
-                                tempInput.setSelectionRange(0, 99999);
-                                navigator.clipboard.writeText(tempInput.value);
-                                parentElToCreateTempInput.removeChild(tempInput);
-                            });
+                    <img id="copyIcon<%=index+1%>" class="hover-effect" src="https://i.imgur.com/9lHvVix.png" alt="Link" width="20" height="20">
+                    <script>
+                        const copyIcon<%=index+1%> = document.getElementById("copyIcon<%=index+1%>")
+                        copyIcon<%=index+1%>.addEventListener("click", function() {
+                        const tempInput = document.createElement("input")
+                        const parentElToCreateTempInput = document.getElementById("parentElToCreateTempInput")
+                        tempInput.value = "<%=styleset.googleFontHref%>"
+                        parentElToCreateTempInput.appendChild(tempInput) 
+                        tempInput.select(); 
+                        tempInput.setSelectionRange(0, 99999);
+                        navigator.clipboard.writeText(tempInput.value);
+                        parentElToCreateTempInput.removeChild(tempInput);
+                        });
                         </script>
-                    <!-- </a>  -->
                 </td>
                 <td><%= styleset.mainBackgroundColor %></td>
                 <td><%= styleset.menuBackgroundColor %></td>

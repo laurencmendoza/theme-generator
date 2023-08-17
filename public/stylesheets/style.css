@@ -204,21 +204,10 @@ hr {
   margin: 10px 0;   
 }
 
-.hover-effect {
+.hover-effect, #hover-effect-update, #hover-effect-delete,.delete-button {
   transition: transform 0.3s ease;
 }
 
-.hover-effect:hover {
-  transform: scale(1.1); /* Adjust the scale value for the desired effect */
-}
-
-#hover-effect-update, #hover-effect-delete,.delete-button {
-  /* Add transition for the hover effect */
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Apply the hover effect */
-#hover-effect-update:hover, #hover-effect-delete:hover, .delete-button:hover {
-  
+.hover-effect:hover, #hover-effect-update:hover, #hover-effect-delete:hover, .delete-button:hover {
   transform: scale(1.1); /* Adjust the scale value for the desired effect */
 }
