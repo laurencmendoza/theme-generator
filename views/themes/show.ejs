@@ -58,7 +58,7 @@
 <form action="/themes/<%=themes._id%>?_method=PUT" method="POST">
     <label> Select Style :   
         <select name="stylesetId">
-            <option value="">Default Theme</option>
+            <option value="">Default</option>
             <% stylesets.forEach((styleset, index) => { %>
             <% if (themes.currentStyle && themes.currentStyle.equals(styleset)) { %>
                 <% console.log("applied style " + themes.currentStyle+ "styleset " + styleset)%>
