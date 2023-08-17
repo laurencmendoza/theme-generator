@@ -121,6 +121,7 @@
                 <% } %>
         <% }) %>
         <% if (defaultStylesetIndex !== -1) { %>
+            <% themes.currentStyle = stylesets[defaultStylesetIndex]%>
             <%stylesets.splice(defaultStylesetIndex, 1);%>
             <%stylesets.unshift(themes.currentStyle);%>
          <%}%>
@@ -131,7 +132,7 @@
                     <%= styleset.styleID %> <br>
                     <% if (themes.currentStyle && themes.currentStyle.equals(styleset)) { %> Applied Style <% } %>
                 </td>
-                <td class="styleset-user"><img alt="avatar" src="<%= styleset.userAvatar %>" referrerpolicy="no-referrer" >&nbsp;&nbsp;<%= styleset.userName %></td>  
+                <td class="styleset-user"><img alt="avatar" src="<%= styleset.user.avatar %>" referrerpolicy="no-referrer" >&nbsp;&nbsp;<%= styleset.user.name %></td>  
                 <td><%= styleset.fontColor %></td>
                 <td id="parentElToCreateTempInput">
                     <span><%= styleset.googleFontFamily %>&nbsp;</span>
@@ -157,7 +158,7 @@
                 <td><%= styleset.buttonHoverColor %></td>
                 
                 <td>
-                    <% if (user?._id.equals(styleset.user)) { %>
+                    <% if (user?._id.equals(styleset.user._id)) { %>
                     <form action="/themes/<%=themes._id%>/stylesets/<%=styleset._id%>?_method=PUT" method="POST">
 
                     <button id="hover-effect-update" class="update-button" type="submit" value="<%= styleset._id %>"> ↺ </button></td>
@@ -171,7 +172,7 @@
                     <% } %>
                 </td>
                 <td> 
-                    <% if (user?._id.equals(styleset.user)) { %>
+                    <% if (user?._id.equals(styleset.user._id)) { %>
                     <form action="/themes/<%=themes._id%>/stylesets/<%=styleset._id%>?_method=DELETE" method="POST">
                     <button id="hover-effect-delete" class="delete-button" type="submit">X</button>
                     </form>
