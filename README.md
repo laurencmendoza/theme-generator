@@ -17,11 +17,13 @@ Theme Generator is a cutting-edge web application that revolutionizes the way yo
 - Embedded JavaScript Templating (EJS)
 - CSS
 - MongoDB
+- Mongoose
 - Express
 - Node.js
 - Bootstrap
 - OpenAI
 - Passport
+- Method Override
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
