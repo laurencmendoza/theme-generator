@@ -93,9 +93,8 @@
 <table class="table">
     <thead>
     <tr>
-        <th class="tableHeader"></th>
+        <th class="tableHeader">#</th>
         <th class="tableHeader">User</th>
-        <th class="tableHeader">Style ID #</th>
         <th class="tableHeader">Font Color</th>
         <th class="tableHeader">Google Font Family</th>
         <!-- <th class="tableHeader">Google Font Link</th> -->
@@ -128,13 +127,11 @@
 
         <% stylesets.forEach((styleset, index) => { %>
             <tr>
-                <% if (themes.currentStyle && themes.currentStyle.equals(styleset)) { %>
-                    <td>Applied Style</td>
-                <% } else {%>
-                    <td></td>
-                <% } %>
-                <td class="styleset-user"><img alt="avatar" src="<%= styleset.userAvatar %>" referrerpolicy="no-referrer" >&nbsp;&nbsp;<%= styleset.userName %></td>
-                <td><%= styleset.styleID %></td>
+                <td>
+                    <%= styleset.styleID %> <br>
+                    <% if (themes.currentStyle && themes.currentStyle.equals(styleset)) { %> Applied Style <% } %>
+                </td>
+                <td class="styleset-user"><img alt="avatar" src="<%= styleset.userAvatar %>" referrerpolicy="no-referrer" >&nbsp;&nbsp;<%= styleset.userName %></td>  
                 <td><%= styleset.fontColor %></td>
                 <td id="parentElToCreateTempInput">
                     <span><%= styleset.googleFontFamily %>&nbsp;</span>
