@@ -131,7 +131,10 @@
                     <%= styleset.styleID %> <br>
                     <% if (themes.currentStyle && themes.currentStyle.equals(styleset)) { %> Applied Style <% } %>
                 </td>
-                <td class="styleset-user"><img alt="avatar" src="<%= styleset.userAvatar %>" referrerpolicy="no-referrer" >&nbsp;&nbsp;<%= styleset.userName %></td>  
+                <td class="styleset-user">
+                    <img alt="avatar" src="<%= styleset.userAvatar %>" referrerpolicy="no-referrer" >&nbsp;&nbsp;
+                    <span class="username"><%= styleset.userName %></span>
+                </td>  
                 <td><%= styleset.fontColor %></td>
                 <td id="parentElToCreateTempInput">
                     <span><%= styleset.googleFontFamily %>&nbsp;</span>

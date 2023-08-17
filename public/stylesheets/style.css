@@ -199,11 +199,14 @@ th, td {
 }
 
 .styleset-user, .theme-user {
+  display: flex;
   justify-content: center;
   align-items: center;
+  /* flex-wrap: nowrap; */
 }
 
 .styleset-user img, .theme-user img {
+  display: block;
   border-radius: 50%;
   height: 35px;
 }
