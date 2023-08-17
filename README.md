@@ -8,14 +8,14 @@
 # Theme Generator
 Theme Generator is a cutting-edge web application that revolutionizes the way you design and style your web projects. Say goodbye to painstakingly tweaking CSS properties and struggling with design tools.  With just a simple description, Theme Generator offers an expansive array of AI-generated web application styling properties. From fonts to background colors, navigation styles to table decorations, and beyond – the possibilities are limitless. Modify and preview a plethora of styles right on the page, allowing you to effortlessly discover the perfect aesthetic to suit your unique needs.
 
-# Screenshot
+## Screenshot
 
 <img src="url to your image on imgur">
 <img src="url to your image on imgur">
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# Technologies Used
+## Technologies Used
 
 - JavaScript
 - Embedded JavaScript Templating (EJS)
@@ -31,7 +31,7 @@ Theme Generator is a cutting-edge web application that revolutionizes the way yo
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# Getting Started
+## Getting Started
 
 [Click to see the app!](https://alella-theme-generator-49b5c35126f2.herokuapp.com/)
 
@@ -53,14 +53,18 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# Next Steps
+## Next Steps
 
-- Future enhancement one...
-- Future enhancement two...
+- Truncate theme description on the "All Themes" page
+- On the theme "DETAILS" page, in the styles table, have each row render a preview of the style
+- Allow users to preview styles on the whole application
+- Allow users to export styles in CSS format
+- Allow users to customize generated style properties
+- Limit the number of OpenAI requests done by one user
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- <!-- MARKDOWN LINKS & IMAGES -->
+<!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/laurencmendoza/theme-generator.svg?style=for-the-badge
 [contributors-url]: https://github.com/laurencmendoza/theme-generator/graphs/contributors
