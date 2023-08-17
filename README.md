@@ -4,7 +4,7 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 # Theme Generator
-The app will provide the theme for the user to utilize for his/her applications. The theme will include properties such as color, font, background color
+Theme Generator is a cutting-edge web application that revolutionizes the way you design and style your web projects. Say goodbye to painstakingly tweaking CSS properties and struggling with design tools.  With just a simple description, Theme Generator offers an expansive array of AI-generated web application styling properties. From fonts to background colors, navigation styles to table decorations, and beyond – the possibilities are limitless. Modify and preview a plethora of styles right on the page, allowing you to effortlessly discover the perfect aesthetic to suit your unique needs.
 
 # Screenshot
 
