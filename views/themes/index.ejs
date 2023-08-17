@@ -9,7 +9,7 @@
     <div class="col" style="padding: 25px">
     <table class="table">
         <thead>
-            <tr >
+            <tr>
                 <th class="tableHeader">User</th>
                 <th class="tableHeader"> Theme </th>
                 <th class="tableHeader"> Description </th>
@@ -20,7 +20,7 @@
         <tbody>
             <% themes.forEach(function(t) { %>
             <tr>
-                <td class="theme-user"><img alt="avatar" src="<%= t.userAvatar %>" referrerpolicy="no-referrer" >&nbsp;&nbsp;<%= t.userName %></td>
+                <td class="theme-user" style="vertical-align: middle;"><img alt="avatar" src="<%= t.userAvatar %>" referrerpolicy="no-referrer" >&nbsp;&nbsp;<%= t.userName %></td>
                 <td> <%= t.theme %> </td>
                 <td> <%= t.description %> </td>
 
