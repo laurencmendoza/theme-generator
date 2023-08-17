@@ -57,7 +57,7 @@ a {
 
 .generate-button:hover {
   background-color:rgb(128, 128, 128);
-  color: rgb(255, 255, 255);
+  color: rgb(255, 253, 253);
 } 
 
 .loading {
@@ -147,7 +147,7 @@ th, td {
 
 .new-button:hover {
   background-color:rgb(128, 128, 128);
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 } 
 
 .delete-button {

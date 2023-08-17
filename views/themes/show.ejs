@@ -7,7 +7,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 
 <style>
-
     <% const defaultTheme = JSON.parse(themes.defaultStyle) %>
     body {
         <% if (themes.currentStyle) { %>
@@ -23,6 +22,9 @@
         .apply-button, .generate-button {
             background-color: <%= themes.currentStyle.buttonColor %> !important;
         }
+        .apply-button:hover, .generate-button:hover {
+            background-color: <%= themes.currentStyle.buttonHoverColor %> !important;
+        }
         <% } else { %>
          background-color: <%= defaultTheme.mainbBackgroundColor %> !important;
          color: <%= defaultTheme.fontColor %> !important;
@@ -36,11 +38,10 @@
         .apply-button, .generate-button {
             background-color: <%= defaultTheme.buttonColor %> !important;
         }
-        /* .generate-button {
-            background-color: <%= defaultTheme.generateButtonColor %> !important;
-        } */
-        <% } %>
-    } 
+        .apply-button:hover, .generate-button:hover {
+            background-color: <%= defaultTheme.buttonHoverColor %> !important;
+        }
+        <% } %> 
 
 </style>
 
@@ -96,6 +97,7 @@
         <th class="tableHeader">Navigation Color</th>
         <th class="tableHeader">Table Header Color</th>
         <th class="tableHeader">Button Color</th>
+        <th class="tableHeader">Button Hover Color</th>
         <th class="tableHeader"> </th>
         <th class="tableHeader"> </th>
     </tr>
@@ -117,6 +119,7 @@
                 <td><%= styleset.menuBackgroundColor %></td>
                 <td><%= styleset.tableHeaderColor %></td>
                 <td><%= styleset.buttonColor %></td>
+                <td><%= styleset.buttonHoverColor %></td>
                 
                 <td>
                     <% if (user?._id.equals(styleset.user)) { %>

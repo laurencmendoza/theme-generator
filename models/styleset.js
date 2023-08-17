@@ -27,6 +27,9 @@ const stylesetSchema = new Schema({
     buttonColor: {  
         type: String
     },
+    buttonHoverColor: {
+        type: String
+    },
     // Do not change user, userName and userAvatar propeeties. They are required when using Google OAuth
     user: {
         type: Schema.Types.ObjectId,
