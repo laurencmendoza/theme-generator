@@ -218,18 +218,19 @@ th, td {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 17px;
 }
 
 .nav-auth {
-  display: fixed;
+  /* display: fixed; */
+  width: 130px;
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
-  padding: 10px;
-  /* margin-left: 38px; */
+  margin: 0 auto;
+  padding: 12px;
   font-weight: bold;
   border-radius: 5px;
 }
+
 
 .login img {
   height: 20px;
