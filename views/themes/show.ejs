@@ -7,7 +7,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 
 <style>
-
     <% const defaultTheme = JSON.parse(themes.defaultStyle) %>
     body {
         <% if (themes.currentStyle) { %>
@@ -23,6 +22,9 @@
         .apply-button, .generate-button {
             background-color: <%= themes.currentStyle.buttonColor %> !important;
         }
+        .apply-button:hover, .generate-button:hover {
+            background-color: <%= themes.currentStyle.buttonHoverColor %> !important;
+        }
         <% } else { %>
          background-color: <%= defaultTheme.mainbBackgroundColor %> !important;
          color: <%= defaultTheme.fontColor %> !important;
@@ -36,11 +38,10 @@
         .apply-button, .generate-button {
             background-color: <%= defaultTheme.buttonColor %> !important;
         }
-        /* .generate-button {
-            background-color: <%= defaultTheme.generateButtonColor %> !important;
-        } */
-        <% } %>
-    } 
+        .apply-button:hover, .generate-button:hover {
+            background-color: <%= defaultTheme.buttonHoverColor %> !important;
+        }
+        <% } %> 
 
 </style>
 
@@ -79,7 +80,7 @@
 <button class="generate-button" type="submit">Generate Style</button>
 </form><br>
 
-<!-- Loading GIF  -->
+<!-- loading -->
 <div class="loading" style="display: none;">
 </div>
 <script>
@@ -102,6 +103,7 @@
         <th class="tableHeader">Navigation Color</th>
         <th class="tableHeader">Table Header Color</th>
         <th class="tableHeader">Button Color</th>
+        <th class="tableHeader">Button Hover Color</th>
         <th class="tableHeader"> </th>
         <th class="tableHeader"> </th>
     </tr>
@@ -123,18 +125,24 @@
                 <td><%= styleset.menuBackgroundColor %></td>
                 <td><%= styleset.tableHeaderColor %></td>
                 <td><%= styleset.buttonColor %></td>
+                <td><%= styleset.buttonHoverColor %></td>
                 
                 <td>
                     <% if (user?._id.equals(styleset.user)) { %>
                     <form action="/themes/<%=themes._id%>/stylesets/<%=styleset._id%>?_method=PUT" method="POST">
-                    <button class="update-button" type="submit" value="<%= styleset._id%>"> ↺ </button></td>
+                    <button class="update-button" type="submit" value="<%= styleset._id%>"> ↺ </button>
                     </form>
+                    <script>
+                        document.querySelector('.update-button').addEventListener('click', function() {
+                            document.querySelector('.loading').style.display = 'block';
+                        });
+                    </script>
                     <% } %>
-                <td>
+                </td>
+                <td> 
                     <% if (user?._id.equals(styleset.user)) { %>
                     <form action="/themes/<%=themes._id%>/stylesets/<%=styleset._id%>?_method=DELETE" method="POST">
                     <button class="delete-button" type="submit">X</button>
-                    </form>
                     <% } %>
                 </td>
 
