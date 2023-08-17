@@ -73,7 +73,7 @@
 <button class="generate-button" type="submit">Generate Style</button>
 </form><br>
 
-<!-- Loading GIF  -->
+<!-- loading -->
 <div class="loading" style="display: none;">
 </div>
 <script>
@@ -121,14 +121,19 @@
                 <td>
                     <% if (user?._id.equals(styleset.user)) { %>
                     <form action="/themes/<%=themes._id%>/stylesets/<%=styleset._id%>?_method=PUT" method="POST">
-                    <button class="update-button" type="submit" value="<%= styleset._id%>"> ↺ </button></td>
+                    <button class="update-button" type="submit" value="<%= styleset._id%>"> ↺ </button>
                     </form>
+                    <script>
+                        document.querySelector('.update-button').addEventListener('click', function() {
+                            document.querySelector('.loading').style.display = 'block';
+                        });
+                    </script>
                     <% } %>
-                <td>
+                </td>
+                <td> 
                     <% if (user?._id.equals(styleset.user)) { %>
                     <form action="/themes/<%=themes._id%>/stylesets/<%=styleset._id%>?_method=DELETE" method="POST">
                     <button class="delete-button" type="submit">X</button>
-                    </form>
                     <% } %>
                 </td>
 
