@@ -13,6 +13,8 @@ Theme Generator is a cutting-edge web application that revolutionizes the way yo
 <img src="url to your image on imgur">
 <img src="url to your image on imgur">
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 # Technologies Used
 
 - JavaScript
@@ -32,6 +34,8 @@ Theme Generator is a cutting-edge web application that revolutionizes the way yo
 # Getting Started
 
 [Click to see the app!](https://alella-theme-generator-49b5c35126f2.herokuapp.com/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
@@ -53,6 +57,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 - Future enhancement one...
 - Future enhancement two...
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 - <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
