@@ -40,9 +40,9 @@ Theme Generator is a cutting-edge web application that revolutionizes the way yo
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* [How to Build Your Own AI With ChatGPT API from Web Dev Simplified](https://youtu.be/4qNwoAAfnk4)
+* [Documentation on OpenAI](https://platform.openai.com/docs/libraries/node-js-library)
+* [RESTful Routes to CRUD Mapping](https://gist.github.com/jim-clark/17908763db7bd3c403e6#routing-for-nested-resources-onemany--manymany-relationships)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
