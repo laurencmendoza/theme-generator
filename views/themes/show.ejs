@@ -167,11 +167,7 @@
                     <button id="hover-effect-update" class="update-button" type="submit" value="<%= styleset._id %>"> ↺ </button></td>
 
                     </form>
-                    <script>
-                        document.querySelector('.update-button').addEventListener('click', function() {
-                            document.querySelector('.loading').style.display = 'block';
-                        });
-                    </script>
+                   
                     <% } %>
                 </td>
                 <td> 
@@ -185,6 +181,15 @@
 
             </tr>
         <% }) %>
+        <script>
+            const updateButtonEls = document.querySelectorAll('.update-button');
+            updateButtonEls.forEach((updateButtonEl)=>{
+                updateButtonEl.addEventListener('click', ()=>{
+                document.querySelector('.loading').style.display = 'block';
+            });
+            })
+           
+        </script>
     </tbody>
 </table>
 </div>
