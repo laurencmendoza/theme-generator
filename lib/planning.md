@@ -45,6 +45,9 @@ Trello sprint board [link](https://trello.com/b/1AhAgCnS/theme-generator)
 | _id | Objectid | n/a | n/a |
 | theme | String | Required. Allow no more than 40 characters| n/a |
 | description | String | Required. Allow no more than 300 characters | n/a |
+| defaultStyle | String | n/a | defaultTheme |
+| currentStyle | ObjectId, ref: "Styleset" | n/a | n/a |
+| user | ObjectId, ref: "User" | Required | n/a |
 
 ### Seconadary Schema: Styleset
 
@@ -52,15 +55,25 @@ Trello sprint board [link](https://trello.com/b/1AhAgCnS/theme-generator)
 |----------|----------|----------|----------|
 | _id | Objectid | n/a | n/a |
 | theme | Objectid, ref: 'Theme' | n/a | n/a |
-| a_Color | String | ex. rgba(0, 128, 255, 1)| rgba(0, 0, 255, 1)|
-| a_TextDecoration | String | ex. none | underline |
-| fontColor | String | ex. rgba(66, 71, 72, 1)| rgba(0, 0, 0, 1)|
-| googleFontFamily | String | ex. 'Josefin Sans' | Helvetica, sans-serif |
-| nav_BackgroundColor | String | ex. rgba(255, 152, 84, 0.9)| rgba(232, 236, 235, 1) |
-| main_BackgroundColor | String | ex. rgba(232, 236, 235, 1) | rgba(255, 255, 255, 1) |
-| button_Color | String | ex. rgba(255, 255, 255, 1)| rgba(255, 255, 255, 1) |
-| button_BackgroundColor | String | ex. rgba(0, 123, 255, 1) | rgba(128, 128, 128, 1) |
-| button_BackgroundColor_Hover | String | ex. rgba(0, 86, 179, 1) | rgba(85, 85, 85, 1) |
+| fontColor | String | n/a | n/a |
+| googleFontHref | String | n/a | n/a |
+| googleFontFamily | String | n/a | n/a |
+| mainBackgroundColor | String | n/a | n/a |
+| menuBackgroundColor | String | n/a | n/a |
+| tableHeaderColor | String | n/a | n/a |
+| buttonColor | String | n/a | n/a |
+| buttonHoverColor | String | n/a | n/a |
+| user | Objectid, ref: "User" | Required | n/a |
+
+### Seconadary Schema: User
+
+| Property | Type | Validations | Default Value |
+|----------|----------|----------|----------|
+| _id | Objectid | n/a | n/a |
+| name | String | n/a | n/a |
+| googleId | String | Required | n/a |
+| email | String | n/a | n/a |
+| avatar | String | n/a | n/a |
 
 ## Entity Relationship Diagram
 
