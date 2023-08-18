@@ -50,6 +50,8 @@ Theme Generator is a full-stack, CRUD web application that revolutionizes the wa
 
 [Check out our Trello board!](https://trello.com/b/1AhAgCnS/theme-generator)
 
+[Click to see more in our planning.md](https://github.com/laurencmendoza/theme-generator/blob/main/lib/planning.md)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
