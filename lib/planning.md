@@ -138,5 +138,5 @@ Trello sprint board [link](https://trello.com/b/1AhAgCnS/theme-generator)
 | ✅TG-35      | Imrovement. Set default styleset across all the pages | AAU, I want to see default styleset to be applied across the all pages escept theme detals page |  | 2 | Moderate | 1 |  |
 | ✅TG-36      | Improvement. Merge Applied Style and Style ID columns | AAU, when viewing the details page (show view) for a theme, I want to see Applied Style and Style ID columns merged |  | 2 | Low | 1 |  |
 | ✅TG-37      | Improvement. Make the font size smaller for styleset table | AAU, when viewing the details page (show view) for a theme, I want to see font size smaller in the styleset table |  | 2 | Low | 1 |  |
-| TG-38      | Bug. Spinner does not appear when clicking on update icon | AAAH, when clicking on update icon on the details page (show view), I want to see a spinner while openAI response is pending |  | 2 | Low | 2 |  |
+| ✅TG-38      | Bug. Spinner does not appear when clicking on update icon | AAAH, when clicking on update icon on the details page (show view), I want to see a spinner while openAI response is pending |  | 2 | Low | 1 |  |
 
